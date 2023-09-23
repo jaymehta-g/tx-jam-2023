@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x=0
 	else:
 		velocity.x += -sign(velocity.x) * decel * delta
-		print_debug(velocity.x)
 	if not is_on_floor():
 		velocity.y+=gravity_accel * delta
 	else:

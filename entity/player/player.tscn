@@ -12,9 +12,8 @@
 [ext_resource type="Shape2D" uid="uid://buu4bqrlcsnim" path="res://entity/bouncer/bouncer_collision_shape.tres" id="9_wr4gg"]
 [ext_resource type="Shape2D" uid="uid://dgrvqfedxlkwd" path="res://entity/trampoline/trampoline_body_collision_shape.tres" id="11_hdj0x"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fak3f"]
-radius = 7.5
-height = 28.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoukd"]
+size = Vector2(10, 20)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
@@ -23,10 +22,15 @@ stats = ExtResource("2_mwk7j")
 input_maps = ExtResource("3_rniwo")
 dbg_color = Color(1, 1, 1, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("8_h7mt5")
+flip_h = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.54)
+position = Vector2(-6.38186e-08, 4)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_fak3f")
+shape = SubResource("RectangleShape2D_eoukd")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_owt2t")
@@ -39,8 +43,10 @@ script = ExtResource("3_7275l")
 wait_time = 0.2
 one_shot = true
 
-[node name="Bounce" type="Node" parent="State Machine"]
+[node name="Bounce" type="Node" parent="State Machine" node_paths=PackedStringArray("right_raycast", "left_raycast")]
 script = ExtResource("4_fkyjq")
+right_raycast = NodePath("../../Wall Detectors/Right Cast")
+left_raycast = NodePath("../../Wall Detectors/Left Cast")
 
 [node name="Dash" type="Node" parent="State Machine"]
 script = ExtResource("8_362mj")
@@ -50,11 +56,6 @@ script = ExtResource("8_ighlf")
 trap_collision_container = NodePath("../../Trap Place Collision Checks")
 bouncer_shape_cast = NodePath("../../Trap Place Collision Checks/Bouncer Placement")
 trampoline_shape = NodePath("../../Trap Place Collision Checks/Trampoline Placement")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.035, 0.035)
-texture = ExtResource("8_h7mt5")
-flip_h = true
 
 [node name="Trap Place Collision Checks" type="Node2D" parent="."]
 
@@ -75,3 +76,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trap Place Collision Checks/Trampoline Placement"]
 shape = ExtResource("11_hdj0x")
 debug_color = Color(0.701961, 0, 0, 0.0980392)
+
+[node name="Wall Detectors" type="Node2D" parent="."]
+
+[node name="Right Cast" type="RayCast2D" parent="Wall Detectors"]
+position = Vector2(0, 3.98)
+target_position = Vector2(11.24, 0)
+collision_mask = 2
+
+[node name="Left Cast" type="RayCast2D" parent="Wall Detectors"]
+position = Vector2(0, 3.98)
+target_position = Vector2(-11.24, 0)
+collision_mask = 2

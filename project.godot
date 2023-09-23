@@ -21,7 +21,6 @@ ResourceManager="*res://misc/resource_manager.gd"
 
 [display]
 
-window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [input]
