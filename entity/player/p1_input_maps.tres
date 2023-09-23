@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InputMaps" load_steps=2 format=3 uid="uid://b6xcapfnmy44k"]
+
+[ext_resource type="Script" path="res://entity/player/input_maps_res.gd" id="1_nwuq3"]
+
+[resource]
+script = ExtResource("1_nwuq3")
+up = &"ui_up"
+down = &"ui_down"
+left = &"ui_left"
+right = &"ui_right"

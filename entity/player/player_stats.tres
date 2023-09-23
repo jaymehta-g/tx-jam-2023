@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://bln3t4wpg7v7"]
+
+[ext_resource type="Script" path="res://entity/player/player_stats_res.gd" id="1_d1u15"]
+
+[resource]
+script = ExtResource("1_d1u15")
+move_speed = 500.0
+jump_velocity = 600.0
+gravity_accel = 2000.0
