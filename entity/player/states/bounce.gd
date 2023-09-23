@@ -3,9 +3,6 @@ extends State
 var player: Player
 var stats: PlayerStats
 
-func state_process(delta: float) -> void:
-	pass
-
 func state_process_physics(delta: float) -> void:
 	if player.is_on_floor() and player.velocity.y >= 0:
 		transition_state("move")
@@ -19,6 +16,3 @@ func state_process_physics(delta: float) -> void:
 func state_enter() -> void:
 	player = base
 	stats = player.stats
-
-func state_exit() -> void:
-	pass

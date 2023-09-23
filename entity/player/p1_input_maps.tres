@@ -7,3 +7,5 @@ script = ExtResource("1_evkc8")
 up = &"p1_up"
 left = &"p1_left"
 right = &"p1_right"
+dash = &"p1_dash"
+use = &"p1_use"
