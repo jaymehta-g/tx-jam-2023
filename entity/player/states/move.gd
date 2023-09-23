@@ -25,7 +25,7 @@ func state_process(_delta: float) -> void:
 	
 	# feels weird putting this here but
 	if Input.is_action_just_pressed(input_maps.use):
-		var node: Node2D = player.dbg_bumper_scene.instantiate()
+		var node: Node2D = ResourceManager.BUMPER_SCENE.instantiate()
 		node.position = player.position + (1 if player.facing_right else -1) * 100 * Vector2.RIGHT # dumb and bad
 		player.add_to_level.emit(node)
 	

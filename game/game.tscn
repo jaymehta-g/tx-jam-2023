@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1tlouttff55g"]
+[gd_scene load_steps=5 format=3 uid="uid://b1tlouttff55g"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_b50ab"]
 [ext_resource type="PackedScene" uid="uid://bvjb86j56uq6r" path="res://level/levels/proto level 2.tscn" id="2_xrfan"]
 [ext_resource type="PackedScene" uid="uid://xtp5dguaero" path="res://entity/player/player.tscn" id="3_ato3j"]
 [ext_resource type="Resource" uid="uid://dtthxkh2jghv6" path="res://entity/player/p1_input_maps.tres" id="4_y1lja"]
-[ext_resource type="PackedScene" uid="uid://chk8q1f37s86n" path="res://entity/bouncer/bouncer.tscn" id="5_6i6ki"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
@@ -14,6 +13,5 @@ script = ExtResource("1_b50ab")
 [node name="Player" parent="." instance=ExtResource("3_ato3j")]
 position = Vector2(163, 77)
 input_maps = ExtResource("4_y1lja")
-dbg_bumper_scene = ExtResource("5_6i6ki")
 
 [connection signal="add_to_level" from="Player" to="Level" method="recieve_node"]

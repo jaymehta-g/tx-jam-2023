@@ -10,8 +10,6 @@ like checking dash direction, go here
 @export var stats: PlayerStats
 @export var input_maps: InputMaps
 
-@export var dbg_bumper_scene: PackedScene
-
 var facing_right: bool
 var can_dash := false
 
