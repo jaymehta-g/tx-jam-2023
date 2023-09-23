@@ -46,15 +46,21 @@ script = ExtResource("8_362mj")
 
 [node name="Place" type="Node" parent="State Machine" node_paths=PackedStringArray("bouncer_shape_cast")]
 script = ExtResource("8_ighlf")
-bouncer_shape_cast = NodePath("Bouncer Shape Cast")
-
-[node name="Bouncer Shape Cast" type="ShapeCast2D" parent="State Machine/Place"]
-position = Vector2(0, -6.955)
-shape = ExtResource("9_wr4gg")
-target_position = Vector2(70, 0)
-collision_mask = 2
+bouncer_shape_cast = NodePath("../../Bouncer Placement")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.035, 0.035)
 texture = ExtResource("8_h7mt5")
 flip_h = true
+
+[node name="Bouncer Placement" type="Area2D" parent="."]
+position = Vector2(36.51, -7.52)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bouncer Placement"]
+shape = ExtResource("9_wr4gg")
+debug_color = Color(0.701961, 0, 0, 0.0980392)
+
+[connection signal="body_entered" from="Bouncer Placement" to="State Machine/Place" method="_on_bouncer_placement_body_entered"]
+[connection signal="body_exited" from="Bouncer Placement" to="State Machine/Place" method="_on_bouncer_placement_body_exited"]
