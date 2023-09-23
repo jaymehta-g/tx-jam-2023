@@ -12,10 +12,12 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7.235)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("1_2720g")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -5.44)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -5)
@@ -24,5 +26,4 @@ shape = SubResource("CapsuleShape2D_4r1cw")
 debug_color = Color(0.701961, 0, 0, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 6.5)
 shape = ExtResource("2_v0kjf")
