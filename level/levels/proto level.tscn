@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3lxok7cs0aib"]
+
+[ext_resource type="PackedScene" uid="uid://rbhefq5n7iqt" path="res://level/objects/prototyping platform/proto platform.tscn" id="1_0iart"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(256, 544)
+
+[node name="Platform2" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(560, 584)
+
+[node name="Platform3" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(904, 512)
+
+[node name="Platform4" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(544, 320)
+
+[node name="Platform5" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(208, 176)
+
+[node name="Platform6" parent="." instance=ExtResource("1_0iart")]
+position = Vector2(936, 120)
