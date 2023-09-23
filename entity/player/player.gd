@@ -12,8 +12,16 @@ like checking dash direction, go here
 
 @export var dbg_color: Color
 
+@export var respawn_location: Node2D
+
 var facing_right: bool
+var facing_right_multiplier: int:
+	get:
+		return 1 if facing_right else -1
 var can_dash := false
+
+var held_trap_type: int = TrapType.BOUNCER
+var held_trap_amount: int = 3
 
 signal add_to_level(node: Node)
 
@@ -27,11 +35,12 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed(input_maps.right):
 		facing_right = true	
 	if $Sprite2D:
-		$Sprite2D.scale.x = abs($Sprite2D.scale.x) * (1 if facing_right else -1)
+		$Sprite2D.scale.x = abs($Sprite2D.scale.x) * facing_right_multiplier
 	# debugging crap
 	if position.y > 2000:
 		velocity = Vector2.ZERO
-		position = Vector2.ZERO
+		if respawn_location: position= respawn_location.position
+		else: position = Vector2.ZERO
 		$"State Machine".go_to_state("move")
 
 func bounce(dir: Vector2, strength: float) -> void: # needs to be here bc

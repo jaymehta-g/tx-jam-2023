@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://entity/bouncer/bouncer.gd" id="1_bekp5"]
 [ext_resource type="Texture2D" uid="uid://cv0am550j0hl2" path="res://entity/bouncer/ball_red_large.png" id="2_10p4f"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ftbg2"]
-radius = 16.0
+[ext_resource type="Shape2D" uid="uid://buu4bqrlcsnim" path="res://entity/bouncer/bouncer_collision_shape.tres" id="3_yqxns"]
 
 [node name="Bouncer" type="Area2D"]
 collision_layer = 0
@@ -16,7 +14,7 @@ scale = Vector2(0.505, 0.505)
 texture = ExtResource("2_10p4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ftbg2")
+shape = ExtResource("3_yqxns")
 debug_color = Color(0, 0.6, 0.701961, 0.0784314)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

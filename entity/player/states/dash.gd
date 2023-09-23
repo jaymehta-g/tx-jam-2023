@@ -17,6 +17,6 @@ func state_enter() -> void:
 func state_process_physics(delta: float) -> void:
 	var x_to_move = delta * stats.dash_speed
 	dash_dist_remaining -= x_to_move
-	var move_success := player.move_and_collide(Vector2.RIGHT * x_to_move * (1 if dash_right else -1))
+	var move_success := player.move_and_collide(Vector2.RIGHT * x_to_move * player.facing_right_multiplier)
 	if dash_dist_remaining <= 0 or move_success != null:
 		transition_state("move")
