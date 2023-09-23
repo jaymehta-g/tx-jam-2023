@@ -29,6 +29,10 @@ initial_state = NodePath("Move")
 [node name="Move" type="Node" parent="State Machine"]
 script = ExtResource("3_7275l")
 
+[node name="Dash Timer" type="Timer" parent="State Machine/Move"]
+wait_time = 0.2
+one_shot = true
+
 [node name="Bounce" type="Node" parent="State Machine"]
 script = ExtResource("4_fkyjq")
 

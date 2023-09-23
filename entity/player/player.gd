@@ -13,6 +13,7 @@ like checking dash direction, go here
 @export var dbg_bumper_scene: PackedScene
 
 var facing_right: bool
+var can_dash := false
 
 signal add_to_level(node: Node)
 
