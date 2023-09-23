@@ -98,4 +98,3 @@ shape = SubResource("RectangleShape2D_800ye")
 
 [node name="Bouncer" parent="." instance=ExtResource("2_lwm2l")]
 position = Vector2(829, 510)
-strength = 1000.0

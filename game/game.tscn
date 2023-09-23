@@ -10,8 +10,14 @@ script = ExtResource("1_b50ab")
 
 [node name="Level" parent="." instance=ExtResource("2_xrfan")]
 
-[node name="Player" parent="." instance=ExtResource("3_ato3j")]
+[node name="Player1" parent="." instance=ExtResource("3_ato3j")]
 position = Vector2(163, 77)
 input_maps = ExtResource("4_y1lja")
+dbg_color = Color(1, 0, 0, 1)
 
-[connection signal="add_to_level" from="Player" to="Level" method="recieve_node"]
+[node name="Player2" parent="." instance=ExtResource("3_ato3j")]
+position = Vector2(163, 77)
+dbg_color = Color(1, 1, 0, 1)
+
+[connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
+[connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]

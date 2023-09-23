@@ -18,6 +18,7 @@ collision_mask = 2
 script = ExtResource("1_nxiq6")
 stats = ExtResource("2_mwk7j")
 input_maps = ExtResource("3_rniwo")
+dbg_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.54)

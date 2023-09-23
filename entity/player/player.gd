@@ -10,10 +10,16 @@ like checking dash direction, go here
 @export var stats: PlayerStats
 @export var input_maps: InputMaps
 
+@export var dbg_color: Color
+
 var facing_right: bool
 var can_dash := false
 
 signal add_to_level(node: Node)
+
+func _ready() -> void:
+	if $Sprite2D:
+		$Sprite2D.modulate = dbg_color
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed(input_maps.left):
