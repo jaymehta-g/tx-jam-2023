@@ -4,8 +4,8 @@ extends Area2D
 var durability = 3
 
 func _on_body_entered(body:Node2D) -> void:
-	if body is PlatformerController:
-		var player := body as PlatformerController
+	if body is Player:
+		var player := body as Player
 		var bounce_dir = player.position - position 
 		player.bounce(bounce_dir, strength)
 
