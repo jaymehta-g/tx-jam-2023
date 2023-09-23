@@ -35,7 +35,6 @@ func _physics_process(delta: float) -> void:
 	
 	if bounced and absf(velocity.x) < stats.move_speed * 0.1: # arbitrary condition
 		bounced = false
-		print_debug("endbounce fx by vx")
 	if bounced:
 		velocity.x -= velocity.x * 0.5 * delta
 	move_and_slide()

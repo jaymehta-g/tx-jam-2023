@@ -9,6 +9,7 @@
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_30o1a")
 stats = ExtResource("2_mwk7j")
 input_maps = ExtResource("3_2q286")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://chk8q1f37s86n"]
+
+[ext_resource type="Texture2D" uid="uid://g2wilstv4d8y" path="res://icon.svg" id="1_5xeia"]
+[ext_resource type="Script" path="res://entity/bouncer/bouncer.gd" id="1_bekp5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ftbg2"]
+radius = 32.0
+
+[node name="Bouncer" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_bekp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0235294, 0.0235294, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_5xeia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ftbg2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

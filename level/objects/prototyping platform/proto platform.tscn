@@ -6,6 +6,7 @@
 size = Vector2(256, 64)
 
 [node name="Platform" type="StaticBody2D"]
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 0.5)

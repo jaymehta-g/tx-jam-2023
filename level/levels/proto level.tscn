@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3lxok7cs0aib"]
+[gd_scene load_steps=3 format=3 uid="uid://b3lxok7cs0aib"]
 
 [ext_resource type="PackedScene" uid="uid://rbhefq5n7iqt" path="res://level/objects/prototyping platform/proto platform.tscn" id="1_0iart"]
+[ext_resource type="PackedScene" uid="uid://chk8q1f37s86n" path="res://entity/bouncer/bouncer.tscn" id="2_xy0it"]
 
 [node name="Level" type="Node2D"]
 
@@ -17,7 +18,59 @@ position = Vector2(904, 512)
 position = Vector2(544, 320)
 
 [node name="Platform5" parent="." instance=ExtResource("1_0iart")]
-position = Vector2(208, 176)
+position = Vector2(80, 152)
 
 [node name="Platform6" parent="." instance=ExtResource("1_0iart")]
 position = Vector2(936, 120)
+
+[node name="Bouncer" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(384, 408)
+strength = 1000.0
+
+[node name="Bouncer4" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(304, 328)
+strength = 1000.0
+
+[node name="Bouncer5" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(192, 328)
+strength = 1000.0
+
+[node name="Bouncer6" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(104, 408)
+strength = 1000.0
+
+[node name="Bouncer7" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(152, 464)
+strength = 1000.0
+
+[node name="Bouncer8" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(240, 480)
+strength = 1000.0
+
+[node name="Bouncer9" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(344, 472)
+strength = 1000.0
+
+[node name="Bouncer10" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(352, 352)
+strength = 1000.0
+
+[node name="Bouncer11" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(248, 328)
+strength = 1000.0
+
+[node name="Bouncer12" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(144, 352)
+strength = 1000.0
+
+[node name="Bouncer13" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(296, 480)
+strength = 1000.0
+
+[node name="Bouncer2" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(672, 504)
+strength = 1000.0
+
+[node name="Bouncer3" parent="." instance=ExtResource("2_xy0it")]
+position = Vector2(416, 120)
+strength = 1000.0

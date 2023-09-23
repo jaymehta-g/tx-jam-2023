@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_nwuq3")
-up = &"ui_up"
-down = &"ui_down"
-left = &"ui_left"
-right = &"ui_right"
+up = &"p2_up"
+left = &"p2_left"
+right = &"p2_right"
