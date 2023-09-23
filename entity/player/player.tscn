@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b6xcapfnmy44k" path="res://entity/player/p1_input_maps.tres" id="3_2q286"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipgrh"]
-size = Vector2(64, 64)
+size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_30o1a")
@@ -14,7 +14,7 @@ stats = ExtResource("2_mwk7j")
 input_maps = ExtResource("3_2q286")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_tbvqc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
