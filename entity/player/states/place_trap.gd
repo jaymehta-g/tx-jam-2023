@@ -8,13 +8,19 @@ var bouncer_is_colliding := false
 
 func state_enter() -> void:
 	player = base
+	place_trap(player.held_trap_type)
+	transition_state("move")
+
+func place_trap(trap: int) -> bool:
 	if player.held_trap_type == TrapType.BOUNCER:
 		var node := ResourceManager.BUMPER_SCENE.instantiate()
-		if not bouncer_is_colliding:
+		if bouncer_is_colliding:
+			return false
+		else:
 			node.position = bouncer_shape_cast.position
 			node.position += player.position 
 			player.add_to_level.emit(node)
-	transition_state("move")
+	return true
 
 func _process(delta: float) -> void:
 	bouncer_shape_cast.position.x = abs(bouncer_shape_cast.position.x) * base.facing_right_multiplier
