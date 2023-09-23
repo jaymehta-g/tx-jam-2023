@@ -1,5 +1,5 @@
 class_name TrapType
-enum {
+enum Types {
 	BOUNCER,
 	TRAMPOLINE,
 	PROPELLOR,

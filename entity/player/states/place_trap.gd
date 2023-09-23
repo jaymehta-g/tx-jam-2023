@@ -21,7 +21,7 @@ func state_enter() -> void:
 	transition_state("move")
 
 func place_trap(trap: int) -> bool:
-	if trap == TrapType.BOUNCER:
+	if trap == TrapType.Types.BOUNCER:
 		var node := ResourceManager.BUMPER_SCENE.instantiate()
 		if bouncer_is_colliding:
 			return false
@@ -30,14 +30,15 @@ func place_trap(trap: int) -> bool:
 			node.position.x *= player.facing_right_multiplier
 			node.position += player.position 
 			player.add_to_level.emit(node)
-	if trap == TrapType.TRAMPOLINE:
-		var node = ResourceManager.TRAMPOLINE_SCENE.instantiate()
+	if trap == TrapType.Types.TRAMPOLINE:
+		var node := ResourceManager.TRAMPOLINE_SCENE.instantiate() as Trampoline
 		if trampoline_is_colliding:
 			return false
 		else:
 			node.position = trampoline_shape.position
 			node.position.x *= player.facing_right_multiplier
 			node.position += player.position 
+			node.init(player.facing_right)
 			player.add_to_level.emit(node)
 	return true
 
