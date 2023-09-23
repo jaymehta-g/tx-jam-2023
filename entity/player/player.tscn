@@ -9,8 +9,9 @@
 [ext_resource type="Script" path="res://entity/player/states/dash.gd" id="8_362mj"]
 [ext_resource type="Texture2D" uid="uid://bswqg5gsii6ha" path="res://entity/player/ratstudy.png" id="8_h7mt5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipgrh"]
-size = Vector2(28, 15)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fak3f"]
+radius = 7.5
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
@@ -19,8 +20,9 @@ stats = ExtResource("2_mwk7j")
 input_maps = ExtResource("3_rniwo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 4.5)
-shape = SubResource("RectangleShape2D_ipgrh")
+position = Vector2(0, 2.54)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fak3f")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_owt2t")
