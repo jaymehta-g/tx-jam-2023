@@ -16,11 +16,6 @@ input_maps = ExtResource("4_y1lja")
 dbg_color = Color(1, 0, 0, 1)
 respawn_location = NodePath("../Marker2D2")
 
-[node name="Player2" parent="." node_paths=PackedStringArray("respawn_location") instance=ExtResource("3_ato3j")]
-position = Vector2(163, 77)
-dbg_color = Color(1, 1, 0, 1)
-respawn_location = NodePath("../Marker2D")
-
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(945, 351)
 
@@ -28,4 +23,3 @@ position = Vector2(945, 351)
 position = Vector2(230, 85)
 
 [connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
-[connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]

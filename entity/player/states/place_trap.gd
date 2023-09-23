@@ -1,10 +1,19 @@
 extends State
 
+@export var trap_collision_container: Node2D # for flipping them on player turn around
 @export var bouncer_shape_cast: Area2D
+@export var trampoline_shape: Area2D
 
 var player: Player
 
 var bouncer_is_colliding := false
+var trampoline_is_colliding := false
+
+func _ready() -> void:
+	bouncer_shape_cast.body_entered.connect(func(_c): bouncer_is_colliding = true)
+	bouncer_shape_cast.body_exited.connect(func(_c): bouncer_is_colliding = false)
+	trampoline_shape.body_entered.connect(func(_c): trampoline_is_colliding = true)
+	trampoline_shape.body_exited.connect(func(_c): trampoline_is_colliding = false)
 
 func state_enter() -> void:
 	player = base
@@ -23,11 +32,4 @@ func place_trap(trap: int) -> bool:
 	return true
 
 func _process(delta: float) -> void:
-	bouncer_shape_cast.position.x = abs(bouncer_shape_cast.position.x) * base.facing_right_multiplier
-
-func _on_bouncer_placement_body_exited(body:Node2D) -> void:
-	bouncer_is_colliding = false
-
-
-func _on_bouncer_placement_body_entered(body:Node2D) -> void:
-	bouncer_is_colliding = true
+	trap_collision_container.scale.x = base.facing_right_multiplier

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://btxh740bc04eu"]
+
+[ext_resource type="Texture2D" uid="uid://hwrn5bfm1ubr" path="res://entity/trampoline/trampoline placeholder.png" id="1_2720g"]
+[ext_resource type="Shape2D" uid="uid://dgrvqfedxlkwd" path="res://entity/trampoline/trampoline_body_collision_shape.tres" id="2_v0kjf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4r1cw"]
+radius = 4.0
+height = 32.0
+
+[node name="Trampoline" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_2720g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_4r1cw")
+debug_color = Color(0.701961, 0, 0, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 6.5)
+shape = ExtResource("2_v0kjf")
