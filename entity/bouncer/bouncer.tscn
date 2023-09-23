@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://chk8q1f37s86n"]
+[gd_scene load_steps=13 format=3 uid="uid://chk8q1f37s86n"]
 
 [ext_resource type="Script" path="res://entity/bouncer/bouncer.gd" id="1_bekp5"]
 [ext_resource type="Texture2D" uid="uid://cv0am550j0hl2" path="res://entity/bouncer/ball_red_large.png" id="2_10p4f"]
@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.505, 0.505)]
+"values": [Vector2(0.22, 0.22)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -116,6 +116,43 @@ _data = {
 "bounce": SubResource("Animation_h7q2r")
 }
 
+[sub_resource type="Animation" id="Animation_wyw70"]
+resource_name = "fade out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_onf52"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vhkph"]
+_data = {
+"RESET": SubResource("Animation_onf52"),
+"fade out": SubResource("Animation_wyw70")
+}
+
 [node name="Bouncer" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_bekp5")
@@ -138,6 +175,16 @@ libraries = {
 [node name="Bounce" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_aly7y")
+}
+
+[node name="Disappear Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Fade Out Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vhkph")
 }
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
