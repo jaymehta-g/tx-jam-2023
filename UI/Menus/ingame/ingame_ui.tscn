@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2x0k23y332v" path="res://UI/Menus/ingame/items_counter_right.tscn" id="3_4qe1b"]
 [ext_resource type="Texture2D" uid="uid://c8khoj0jakq6x" path="res://entity/shop item/trampoline_icon.png" id="3_t4p5r"]
 [ext_resource type="Texture2D" uid="uid://bl5ln626eusmv" path="res://entity/shop item/propellor_icon.png" id="4_vmlij"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_hwrps"]
-font_size = 64
+[ext_resource type="LabelSettings" uid="uid://er35le73f67m" path="res://UI/Menus/ingame/coin counter label settings.tres" id="7_3koej"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56sqg"]
 font_size = 32
@@ -68,7 +66,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "0
 "
-label_settings = SubResource("LabelSettings_hwrps")
+label_settings = ExtResource("7_3koej")
 
 [node name="P1 Deaths" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -89,7 +87,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 text = "0
 "
-label_settings = SubResource("LabelSettings_hwrps")
+label_settings = ExtResource("7_3koej")
 
 [node name="P2 Deaths" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer2"]
 unique_name_in_owner = true
