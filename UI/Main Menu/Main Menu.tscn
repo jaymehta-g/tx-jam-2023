@@ -3,57 +3,57 @@
 [ext_resource type="Script" path="res://UI/Main Menu/main_menu.gd" id="1_v7eka"]
 [ext_resource type="Texture2D" uid="uid://b28wh53d1so7n" path="res://UI/Main Menu/MainMenuBackground.png" id="2_7ueoc"]
 [ext_resource type="Texture2D" uid="uid://b3wok4k6d4g13" path="res://UI/Main Menu/MainMenuButton.png" id="3_qgf1l"]
-[ext_resource type="Texture2D" uid="uid://cqeqvlcfl0srv" path="res://UI/Coin Menu/coin/center.png" id="4_u52nx"]
-[ext_resource type="Texture2D" uid="uid://bpwklddxoyrn" path="res://UI/Coin Menu/coin/dog1.png" id="5_qjsj8"]
-[ext_resource type="Texture2D" uid="uid://b81cg2wlk5tv0" path="res://UI/Coin Menu/coin/dog2.png" id="6_1yvyl"]
-[ext_resource type="Texture2D" uid="uid://qmjd5mbtp5vw" path="res://UI/Coin Menu/coin/dog3.png" id="7_gsbmm"]
-[ext_resource type="Texture2D" uid="uid://4ndtm85t8uhv" path="res://UI/Coin Menu/coin/dog4.png" id="8_uklme"]
-[ext_resource type="Texture2D" uid="uid://co44bb86b065l" path="res://UI/Coin Menu/coin/dog5.png" id="9_ber54"]
-[ext_resource type="Texture2D" uid="uid://dat7fpd3jbyu1" path="res://UI/Coin Menu/coin/money1.png" id="10_6bxr6"]
-[ext_resource type="Texture2D" uid="uid://fsp6bg3se3iw" path="res://UI/Coin Menu/coin/money2.png" id="11_dy5ec"]
-[ext_resource type="Texture2D" uid="uid://cvrcq7d5s80dk" path="res://UI/Coin Menu/coin/money3.png" id="12_m8qp8"]
-[ext_resource type="Texture2D" uid="uid://b7oyar5p0t2m4" path="res://UI/Coin Menu/coin/money4.png" id="13_aa1sj"]
-[ext_resource type="Texture2D" uid="uid://rxvceim2gxj6" path="res://UI/Coin Menu/coin/money5.png" id="14_humat"]
+[ext_resource type="Texture2D" uid="uid://cqeqvlcfl0srv" path="res://UI/Main Menu/Coin Animation/center.png" id="4_ao1bn"]
+[ext_resource type="Texture2D" uid="uid://bpwklddxoyrn" path="res://UI/Main Menu/Coin Animation/dog1.png" id="5_1lqoe"]
+[ext_resource type="Texture2D" uid="uid://b81cg2wlk5tv0" path="res://UI/Main Menu/Coin Animation/dog2.png" id="6_yj1rc"]
+[ext_resource type="Texture2D" uid="uid://qmjd5mbtp5vw" path="res://UI/Main Menu/Coin Animation/dog3.png" id="7_8tc5m"]
+[ext_resource type="Texture2D" uid="uid://4ndtm85t8uhv" path="res://UI/Main Menu/Coin Animation/dog4.png" id="8_r81b7"]
+[ext_resource type="Texture2D" uid="uid://co44bb86b065l" path="res://UI/Main Menu/Coin Animation/dog5.png" id="9_cq2p7"]
+[ext_resource type="Texture2D" uid="uid://dat7fpd3jbyu1" path="res://UI/Main Menu/Coin Animation/money1.png" id="10_cg2hp"]
+[ext_resource type="Texture2D" uid="uid://fsp6bg3se3iw" path="res://UI/Main Menu/Coin Animation/money2.png" id="11_8q315"]
+[ext_resource type="Texture2D" uid="uid://cvrcq7d5s80dk" path="res://UI/Main Menu/Coin Animation/money3.png" id="12_uh0cm"]
+[ext_resource type="Texture2D" uid="uid://b7oyar5p0t2m4" path="res://UI/Main Menu/Coin Animation/money4.png" id="13_76lcx"]
+[ext_resource type="Texture2D" uid="uid://rxvceim2gxj6" path="res://UI/Main Menu/Coin Animation/money5.png" id="14_vwo08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vjgf"]
 resource_name = "Flipping"
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_u52nx")
+"texture": ExtResource("4_ao1bn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qjsj8")
+"texture": ExtResource("5_1lqoe")
 }, {
 "duration": 2.0,
-"texture": ExtResource("6_1yvyl")
+"texture": ExtResource("6_yj1rc")
 }, {
 "duration": 3.0,
-"texture": ExtResource("7_gsbmm")
+"texture": ExtResource("7_8tc5m")
 }, {
 "duration": 2.0,
-"texture": ExtResource("8_uklme")
+"texture": ExtResource("8_r81b7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ber54")
+"texture": ExtResource("9_cq2p7")
 }, {
 "duration": 2.0,
-"texture": ExtResource("4_u52nx")
+"texture": ExtResource("4_ao1bn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_6bxr6")
+"texture": ExtResource("10_cg2hp")
 }, {
 "duration": 2.0,
-"texture": ExtResource("11_dy5ec")
+"texture": ExtResource("11_8q315")
 }, {
 "duration": 3.0,
-"texture": ExtResource("12_m8qp8")
+"texture": ExtResource("12_uh0cm")
 }, {
 "duration": 2.0,
-"texture": ExtResource("13_aa1sj")
+"texture": ExtResource("13_76lcx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_humat")
+"texture": ExtResource("14_vwo08")
 }],
 "loop": true,
 "name": &"Flipping",

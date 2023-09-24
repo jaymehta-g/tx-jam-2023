@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://d1r40js12lyp4"]
-
-[node name="Coin Menu" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]

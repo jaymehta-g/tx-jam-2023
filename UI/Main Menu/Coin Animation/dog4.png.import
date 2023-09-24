@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qmjd5mbtp5vw"
-path="res://.godot/imported/dog3.png-7caf561a98cf15dd23acbbbcfb2d6205.ctex"
+uid="uid://4ndtm85t8uhv"
+path="res://.godot/imported/dog4.png-f230dd97b7e31d5bae551b81b3825712.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Coin Menu/coin/dog3.png"
-dest_files=["res://.godot/imported/dog3.png-7caf561a98cf15dd23acbbbcfb2d6205.ctex"]
+source_file="res://UI/Main Menu/Coin Animation/dog4.png"
+dest_files=["res://.godot/imported/dog4.png-f230dd97b7e31d5bae551b81b3825712.ctex"]
 
 [params]
 
