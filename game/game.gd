@@ -16,6 +16,3 @@ func _ready():
 		player_1.coin_count += 5
 	else:
 		player_2.coin_count += 5
-	
-	# more debugging crap:
-	#$"Shop Item".init(TrapType.Types.TRAMPOLINE)

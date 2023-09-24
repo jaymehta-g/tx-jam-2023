@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://kdl0ljmoy1ti"]
+
+[ext_resource type="Script" path="res://entity/shop/shop.gd" id="1_ckfxa"]
+[ext_resource type="PackedScene" uid="uid://c564wxo7xsleg" path="res://entity/shop item/shop_item.tscn" id="2_cb63g"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_ckfxa")
+shop_item_scene = ExtResource("2_cb63g")
+
+[node name="ShopItemLocations" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="ShopItemLocations"]
+
+[node name="Marker2D2" type="Marker2D" parent="ShopItemLocations"]
+position = Vector2(-104, 0)
+
+[node name="Marker2D3" type="Marker2D" parent="ShopItemLocations"]
+position = Vector2(104, 0)
+
+[node name="New Item Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="New Item Timer" to="." method="_timer_timeout"]

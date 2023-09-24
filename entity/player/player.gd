@@ -14,6 +14,8 @@ like checking dash direction, go here
 
 @export var respawn_location: Node2D
 
+@export var type: Type
+
 var facing_right: bool
 var facing_right_multiplier: int:
 	get:
@@ -27,7 +29,14 @@ var current_state: State:
 @export var held_trap_type: TrapType.Types
 var held_trap_amount: int = 3
 
-var coin_count: int = 0
+var coin_count: int:
+	get:
+		return coin_count
+	set(value):
+		coin_count = value
+		SignalBus.coin_counter_change.emit(self, coin_count)
+
+enum Type {P1, P2}
 
 signal add_to_level(node: Node)
 signal use(player: Player) # pass in self to show who used
@@ -35,6 +44,7 @@ signal use(player: Player) # pass in self to show who used
 func _ready() -> void:
 	if $Sprite2D:
 		$Sprite2D.modulate = dbg_color
+	coin_count = coin_count # to update the counters
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed(input_maps.left):

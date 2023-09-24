@@ -18,6 +18,7 @@ var current_player_interacting: Player: # null if nobody there
 var type: TrapType.Types:
 	set(value):
 		type = value
+	get: return type
 
 const prices = {
 	TrapType.Types.BOUNCER: 3,
@@ -57,6 +58,8 @@ func _on_body_exited(body:Node2D) -> void:
 		show_hide_price.play_backwards("show")
 
 func give_to_player(player: Player):
-	player.held_trap_type = type
-	player.held_trap_amount = 3
-	queue_free()
+	if player.coin_count >= price:
+		player.coin_count -= price
+		player.held_trap_type = type
+		player.held_trap_amount = 3
+		queue_free()
