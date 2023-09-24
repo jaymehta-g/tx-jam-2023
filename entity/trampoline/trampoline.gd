@@ -5,8 +5,14 @@ class_name Trampoline
 @export var decel: float
 @export var gravity_accel: float
 @export var bump_force: float
+
 @onready var player_area: Area2D = $"Area2D"
 @onready var spring_anim_player: AnimationPlayer = $"AnimationPlayer"
+@onready var fade_anim_player: AnimationPlayer = $"Fade Out Animation"
+@onready var disappear_timer: Timer = $"Disappear Timer"
+
+func _ready() -> void:
+	disappear_timer.timeout.connect(func(): fade_anim_player.play("fade out"))
 
 func init(face_right: bool) -> Trampoline:
 	if not face_right: speed *= -1 # not great but wtv

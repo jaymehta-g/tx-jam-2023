@@ -19,6 +19,13 @@ config/icon="res://icon.svg"
 
 ResourceManager="*res://misc/resource_manager.gd"
 
+[debug]
+
+gdscript/warnings/unused_variable=0
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+gdscript/warnings/deprecated_keyword=2
+
 [display]
 
 window/stretch/mode="canvas_items"

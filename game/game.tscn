@@ -25,6 +25,7 @@ held_trap_type = 2
 position = Vector2(163, 77)
 dbg_color = Color(0.87451, 1, 0, 1)
 respawn_location = NodePath("../Marker2D2")
+held_trap_type = 1
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(945, 351)
