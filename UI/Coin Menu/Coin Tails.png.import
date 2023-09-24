@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boh7fvq4m5fs4"
-path="res://.godot/imported/smoke_07.png-cf8cdaae37a819ce25549680caa3a634.ctex"
+uid="uid://dew2ggcq3mso8"
+path="res://.godot/imported/Coin Tails.png-d7ea0e7c24822c50d3dd400d338b9d71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entity/player/smoke_fx/smoke_07.png"
-dest_files=["res://.godot/imported/smoke_07.png-cf8cdaae37a819ce25549680caa3a634.ctex"]
+source_file="res://UI/Coin Menu/Coin Tails.png"
+dest_files=["res://.godot/imported/Coin Tails.png-d7ea0e7c24822c50d3dd400d338b9d71.ctex"]
 
 [params]
 

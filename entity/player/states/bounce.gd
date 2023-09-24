@@ -37,6 +37,11 @@ func state_process_physics(delta: float) -> void:
 	player.move_and_slide()
 
 func state_enter() -> void:
+	($"../../CPUParticles2D" as CPUParticles2D).emitting = true
 	player = base
 	stats = player.stats
 	new_velocity = player.velocity
+
+func state_exit() -> void:
+	($"../../CPUParticles2D" as CPUParticles2D).emitting = false
+	pass
