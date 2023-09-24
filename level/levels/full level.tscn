@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfyycibv1xs8j"]
+[gd_scene load_steps=8 format=3 uid="uid://cfyycibv1xs8j"]
 
 [ext_resource type="Script" path="res://level/levels/level.gd" id="1_iyhia"]
 [ext_resource type="Texture2D" uid="uid://litlvbl0rlc" path="res://level/levels/Level Assets/gamebk.png" id="2_a7rxg"]
 [ext_resource type="PackedScene" uid="uid://rdg6ri6w0jt5" path="res://level/objects/real platforms/large platform.tscn" id="3_3mwkp"]
 [ext_resource type="PackedScene" uid="uid://cd0ti3r7mdlca" path="res://level/objects/real platforms/mediumer platform.tscn" id="4_1th8x"]
 [ext_resource type="PackedScene" uid="uid://b3drdiia0u0k4" path="res://level/objects/real platforms/small platform.tscn" id="5_5ignm"]
+[ext_resource type="PackedScene" uid="uid://c5ons0sr2wr5l" path="res://level/objects/real platforms/medium platform.tscn" id="6_v4nn0"]
+[ext_resource type="PackedScene" uid="uid://cjoawdprnaxrb" path="res://level/objects/Blankets/blanket.tscn" id="7_4tfhq"]
 
 [node name="full level" type="Node2D"]
 script = ExtResource("1_iyhia")
@@ -15,14 +17,157 @@ scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_a7rxg")
 metadata/_edit_lock_ = true
 
-[node name="large platform" parent="." instance=ExtResource("3_3mwkp")]
-position = Vector2(558, 185)
-scale = Vector2(1, 0.5)
+[node name="Platforms" type="Node2D" parent="."]
+position = Vector2(2.08165e-12, 70)
+scale = Vector2(1, 0.9)
 
-[node name="mediumer platform" parent="." instance=ExtResource("4_1th8x")]
-position = Vector2(572, 55)
-scale = Vector2(1, 0.5)
+[node name="large platform" parent="Platforms" instance=ExtResource("3_3mwkp")]
+position = Vector2(572, 117)
+scale = Vector2(1, 0.3)
 
-[node name="small platform" parent="." instance=ExtResource("5_5ignm")]
-position = Vector2(566, 327)
-scale = Vector2(1, 0.5)
+[node name="mediumer platform" parent="Platforms" instance=ExtResource("4_1th8x")]
+position = Vector2(573, 40)
+scale = Vector2(1, 0.3)
+
+[node name="small platform2" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(756, 253)
+rotation = 1.5708
+scale = Vector2(0.5, 0.3)
+
+[node name="small platform" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(573, 200)
+rotation = 0.00343914
+scale = Vector2(1, 0.3)
+
+[node name="medium platform" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(625, 295)
+scale = Vector2(0.8, 0.3)
+
+[node name="small platform4" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(871, 328)
+rotation = 1.5708
+scale = Vector2(0.5, 0.3)
+
+[node name="small platform3" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(941, 297)
+scale = Vector2(1, 0.3)
+
+[node name="small platform5" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(986, 56)
+scale = Vector2(0.5, 0.3)
+
+[node name="small platform6" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(1044, 179)
+scale = Vector2(0.8, 0.3)
+
+[node name="small platform7" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(1100, 136)
+rotation = 1.5708
+scale = Vector2(0.5, 0.3)
+
+[node name="medium platform2" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(135, 206)
+scale = Vector2(0.7, 0.3)
+
+[node name="small platform8" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(338, 278)
+scale = Vector2(0.5, 0.3)
+
+[node name="medium platform3" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(155, 379)
+scale = Vector2(0.5, 0.3)
+
+[node name="medium platform4" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(371, 411)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+
+[node name="small platform9" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(409, 455)
+scale = Vector2(0.6, 0.3)
+
+[node name="medium platform5" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(600, 534)
+scale = Vector2(0.6, 0.3)
+
+[node name="small platform10" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(795, 578)
+scale = Vector2(0.7, 0.3)
+
+[node name="large platform2" parent="Platforms" instance=ExtResource("3_3mwkp")]
+position = Vector2(303, 596)
+scale = Vector2(0.5, 0.3)
+
+[node name="medium platform6" parent="Platforms" instance=ExtResource("6_v4nn0")]
+position = Vector2(1005, 455)
+scale = Vector2(0.7, 0.3)
+
+[node name="small platform11" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(1009, 591)
+scale = Vector2(0.7, 0.3)
+
+[node name="small platform12" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(945, 568)
+rotation = 1.5708
+scale = Vector2(0.4, 0.3)
+
+[node name="small platform13" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(1074, 568)
+rotation = 1.5708
+scale = Vector2(0.4, 0.3)
+
+[node name="small platform14" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(129.8, 523.9)
+scale = Vector2(0.7, 0.3)
+
+[node name="small platform15" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(65, 501)
+rotation = 1.5708
+scale = Vector2(0.4, 0.3)
+
+[node name="small platform16" parent="Platforms" instance=ExtResource("5_5ignm")]
+position = Vector2(195, 501)
+rotation = 1.5708
+scale = Vector2(0.4, 0.3)
+
+[node name="Blankets" type="Node2D" parent="."]
+
+[node name="blanket10" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(1041, 249)
+scale = Vector2(0.1, 0.1)
+
+[node name="blanket9" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(127, 273)
+scale = Vector2(0.15, 0.1)
+
+[node name="blanket" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(88, 20)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket2" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(280, 20)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket3" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(472, 21)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket4" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(663, 21)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket5" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(855, 21)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket6" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(1048, 21)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket7" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(569, 189)
+scale = Vector2(0.06, 0.05)
+
+[node name="blanket8" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(648, 421)
+scale = Vector2(0.15, 0.15)
