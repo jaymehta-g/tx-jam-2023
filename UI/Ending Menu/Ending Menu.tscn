@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://da4vb86fhk376"]
+[gd_scene load_steps=2 format=3 uid="uid://da4vb86fhk376"]
+
+[ext_resource type="Texture2D" uid="uid://6jvs04cnghsy" path="res://UI/Ending Menu/player_1_win.png" id="1_l7s1x"]
 
 [node name="ending_menu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l7s1x")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
