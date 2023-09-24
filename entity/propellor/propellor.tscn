@@ -1,58 +1,66 @@
-[gd_scene load_steps=8 format=3 uid="uid://ylhqquqmdtlc"]
+[gd_scene load_steps=11 format=3 uid="uid://ylhqquqmdtlc"]
 
 [ext_resource type="Script" path="res://entity/propellor/propellor.gd" id="1_u4mj2"]
-[ext_resource type="PackedScene" uid="uid://clhc3lqqcfuwi" path="res://entity/propellor/gpu_particles_2d.tscn" id="2_k4kp5"]
+[ext_resource type="Texture2D" uid="uid://c0w6xmtmgy88s" path="res://entity/propellor/animation/propel6.png" id="2_8uks1"]
 [ext_resource type="Texture2D" uid="uid://bg84dpy4ghff7" path="res://entity/propellor/animation/propel1.png" id="2_qg5io"]
+[ext_resource type="Texture2D" uid="uid://b3wntfj2sv81d" path="res://entity/propellor/animation/propel7.png" id="3_0fmug"]
+[ext_resource type="Texture2D" uid="uid://dssxmvjtuumux" path="res://entity/propellor/animation/propel3.png" id="4_fuj5q"]
+[ext_resource type="Texture2D" uid="uid://c4knuipqq8eln" path="res://entity/propellor/animation/propel4.png" id="5_wxoiw"]
+[ext_resource type="Texture2D" uid="uid://bs83qf3mixnvp" path="res://entity/propellor/animation/propel5.png" id="6_ikme3"]
+[ext_resource type="Texture2D" uid="uid://cim56f7iirp76" path="res://entity/propellor/animation/propel2.png" id="8_gegii"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1d5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8uks1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0fmug")
+}],
+"loop": true,
+"name": &"end",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fuj5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wxoiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ikme3")
+}],
+"loop": false,
+"name": &"spinning",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 6.0,
+"texture": ExtResource("2_qg5io")
+}, {
+"duration": 2.0,
+"texture": ExtResource("8_gegii")
+}],
+"loop": true,
+"name": &"start-up",
+"speed": 24.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m4rc"]
 size = Vector2(240, 104)
-
-[sub_resource type="Animation" id="Animation_uf2v5"]
-resource_name = "default"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_qg5io")]
-}
-
-[sub_resource type="Animation" id="Animation_6rubu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("2_qg5io")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5i3y"]
-_data = {
-"RESET": SubResource("Animation_6rubu"),
-"default": SubResource("Animation_uf2v5")
-}
 
 [node name="Propellor" type="Node2D" node_paths=PackedStringArray("coll_shape")]
 script = ExtResource("1_u4mj2")
 strength = 1000.0
 coll_shape = NodePath("Area2D/CollisionShape2D")
-particles_scene = ExtResource("2_k4kp5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-39, 41)
 scale = Vector2(-0.43, 0.43)
-texture = ExtResource("2_qg5io")
+sprite_frames = SubResource("SpriteFrames_h1d5b")
+animation = &"start-up"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -68,11 +76,6 @@ autostart = true
 [node name="Wait To Erase Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_c5i3y")
-}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Wait To Erase Timer" to="." method="queue_free"]
