@@ -29,6 +29,9 @@ var held_trap_amount: int = 3
 
 var coin_count: int = 0
 
+@onready var boing_sfx: AudioStreamPlayer = $"Boing Player"
+@onready var fall_sfx: AudioStreamPlayer = $"Metal Pipe Player"
+
 signal add_to_level(node: Node)
 signal use(player: Player) # pass in self to show who used
 

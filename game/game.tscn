@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1tlouttff55g"]
+[gd_scene load_steps=7 format=3 uid="uid://b1tlouttff55g"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_b50ab"]
 [ext_resource type="PackedScene" uid="uid://bvjb86j56uq6r" path="res://level/levels/proto level 2.tscn" id="2_xrfan"]
 [ext_resource type="PackedScene" uid="uid://xtp5dguaero" path="res://entity/player/player.tscn" id="3_ato3j"]
 [ext_resource type="Resource" uid="uid://dtthxkh2jghv6" path="res://entity/player/p1_input_maps.tres" id="4_y1lja"]
 [ext_resource type="PackedScene" uid="uid://iuukycwm4xas" path="res://entity/cheese coin/coin_spawner.tscn" id="5_0wr7q"]
+[ext_resource type="AudioStream" uid="uid://bwhndygd45swe" path="res://Audio/Music/Helter_Skelter_Bouncer_Park-1.wav" id="6_t17ji"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
@@ -24,7 +25,6 @@ held_trap_type = 2
 position = Vector2(163, 77)
 dbg_color = Color(0.87451, 1, 0, 1)
 respawn_location = NodePath("../Marker2D2")
-held_trap_type = 1
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(945, 351)
@@ -105,6 +105,10 @@ gizmo_extents = 63.8
 [node name="Coin Spawner9" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
 position = Vector2(687.8, 431.8)
 gizmo_extents = 63.8
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_t17ji")
+autoplay = true
 
 [connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
 [connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]

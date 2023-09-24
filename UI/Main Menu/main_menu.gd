@@ -52,6 +52,7 @@ func _process(delta):
 				coin.frame = TAILS # Tails
 			
 			$"Final Wait".start()
+			$"Coin Flip End".play(0)
 	
 	if coin_call_1.visible and coin.is_playing():
 		if Input.is_action_pressed("p1_up"):
@@ -89,6 +90,7 @@ func _on_initial_wait_timeout():
 	coin_active = true
 	coin_velocity = coin_launch
 	coin.play("Flipping")
+	$"Coin Flip Start".play(0)
 	pass # Replace with function body.
 
 
