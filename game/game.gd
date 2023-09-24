@@ -16,6 +16,7 @@ func _ready():
 	Globals.timer.wait_time = 150
 	Globals.timer.one_shot = true
 	Globals.timer.start()
+	Globals.timer.timeout.connect(func(): )
 	if player_1_boon:
 		player_1.coin_count += 5
 	else:

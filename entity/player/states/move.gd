@@ -32,6 +32,11 @@ func state_process(_delta: float) -> void:
 			player.use.emit(player)
 	
 func state_process_physics(delta: float) -> void:
+	if hori_input != 0:
+		player.walk()
+	else:
+		player.idle()
+	
 	player.velocity.x = hori_input * stats.move_speed
 	if player.is_on_floor():
 		if jump_input:
