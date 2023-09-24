@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ylhqquqmdtlc"]
+[gd_scene load_steps=12 format=3 uid="uid://ylhqquqmdtlc"]
 
 [ext_resource type="Script" path="res://entity/propellor/propellor.gd" id="1_u4mj2"]
+[ext_resource type="PackedScene" uid="uid://clhc3lqqcfuwi" path="res://entity/propellor/gpu_particles_2d.tscn" id="2_3j2rd"]
 [ext_resource type="Texture2D" uid="uid://c0w6xmtmgy88s" path="res://entity/propellor/animation/propel6.png" id="2_8uks1"]
 [ext_resource type="Texture2D" uid="uid://bg84dpy4ghff7" path="res://entity/propellor/animation/propel1.png" id="2_qg5io"]
 [ext_resource type="Texture2D" uid="uid://b3wntfj2sv81d" path="res://entity/propellor/animation/propel7.png" id="3_0fmug"]
@@ -55,6 +56,7 @@ size = Vector2(240, 104)
 script = ExtResource("1_u4mj2")
 strength = 1000.0
 coll_shape = NodePath("Area2D/CollisionShape2D")
+particles_scene = ExtResource("2_3j2rd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-37, -7)

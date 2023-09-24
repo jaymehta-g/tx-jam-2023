@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d22ksotnf70v6" path="res://entity/cheese coin/cheese.png" id="2_sgn16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yopa1"]
-radius = 15.0333
+radius = 23.0
 
 [sub_resource type="Animation" id="Animation_wakye"]
 length = 0.001

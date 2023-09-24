@@ -39,7 +39,7 @@ func _on_area_2d_body_entered(body:Node2D) -> void:
 	var bounce_vector := Vector2.UP * bump_force
 	bounce_vector.x = velocity.x
 	var magnitude := bounce_vector.length()
-
+	$"Visible".modulate = Color.WHITE
 	player.bounce(bounce_vector, magnitude)
 	player.play_bounce()
 	spring_anim_player.play("bounce")
