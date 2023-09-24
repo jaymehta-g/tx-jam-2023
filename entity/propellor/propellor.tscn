@@ -1,36 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://ylhqquqmdtlc"]
+[gd_scene load_steps=7 format=3 uid="uid://ylhqquqmdtlc"]
 
-[ext_resource type="Texture2D" uid="uid://g2wilstv4d8y" path="res://icon.svg" id="1_obvs0"]
 [ext_resource type="Script" path="res://entity/propellor/propellor.gd" id="1_u4mj2"]
-[ext_resource type="Texture2D" uid="uid://bvy30vv668oov" path="res://entity/propellor/smoke_07.png" id="2_pwqjm"]
+[ext_resource type="Texture2D" uid="uid://bg84dpy4ghff7" path="res://entity/propellor/animation/propel1.png" id="2_qg5io"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m4rc"]
 size = Vector2(240, 104)
 
-[sub_resource type="Curve" id="Curve_yr4s3"]
-_data = [Vector2(0, 0.0833333), 0.0, 0.0, 0, 0, Vector2(0.0801187, 0.979167), 0.0, 0.0, 0, 0, Vector2(0.772455, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
+[sub_resource type="Animation" id="Animation_uf2v5"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qg5io")]
+}
 
-[sub_resource type="CurveTexture" id="CurveTexture_gs85a"]
-curve = SubResource("Curve_yr4s3")
+[sub_resource type="Animation" id="Animation_6rubu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_qg5io")]
+}
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2xd66"]
-resource_local_to_scene = true
-emission_shape = 3
-emission_box_extents = Vector3(120, 52, 1)
-particle_flag_disable_z = true
-direction = Vector3(0, 1, 0)
-spread = 0.0
-gravity = Vector3(500, 0, 0)
-angular_velocity_min = -422.2
-angular_velocity_max = 316.65
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.1
-scale_max = 0.2
-scale_curve = SubResource("CurveTexture_gs85a")
-turbulence_noise_strength = 7.42
-turbulence_noise_scale = 3.16
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5i3y"]
+_data = {
+"RESET": SubResource("Animation_6rubu"),
+"default": SubResource("Animation_uf2v5")
+}
 
 [node name="Propellor" type="Node2D" node_paths=PackedStringArray("coll_shape")]
 script = ExtResource("1_u4mj2")
@@ -38,8 +48,9 @@ strength = 1000.0
 coll_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.140625, 0.625)
-texture = ExtResource("1_obvs0")
+position = Vector2(-39, 41)
+scale = Vector2(-0.43, 0.43)
+texture = ExtResource("2_qg5io")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -48,12 +59,6 @@ collision_layer = 0
 position = Vector2(125, 0)
 shape = SubResource("RectangleShape2D_6m4rc")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(125, 0)
-amount = 80
-process_material = SubResource("ParticleProcessMaterial_2xd66")
-texture = ExtResource("2_pwqjm")
-
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
@@ -61,6 +66,11 @@ autostart = true
 [node name="Wait To Erase Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c5i3y")
+}
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Wait To Erase Timer" to="." method="queue_free"]
