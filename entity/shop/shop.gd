@@ -14,13 +14,13 @@ func _ready() -> void:
 		if child is Node2D:
 			item_positions.append(child)
 			unused_positions.append(child)
-			child.child_exiting_tree.connect(update_unused)
 
-func update_unused(_a) -> void:
+func update_unused() -> void:
 	unused_positions.clear()
-	for item in item_positions:
-		if item.get_child_count() == 0:
-			unused_positions.append(item)
+	for marker in item_container.get_children():
+		print_debug(marker.get_child_count())
+		if marker.get_child_count() == 0:
+			unused_positions.append(marker)
 	print_debug(unused_positions)
 
 func _timer_timeout():
@@ -34,3 +34,5 @@ func _timer_timeout():
 	var type := TrapType.rand_type()
 	new_position.add_child(node)
 	node.init(type)
+
+	node.tree_exited.connect(update_unused)

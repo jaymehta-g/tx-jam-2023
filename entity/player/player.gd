@@ -27,7 +27,7 @@ var current_state: State:
 		return $"State Machine".current_state
 
 @export var held_trap_type: TrapType.Types
-var held_trap_amount: int = 3
+var held_trap_amount: int = 0
 
 var coin_count: int:
 	get:
