@@ -11,10 +11,12 @@
 [ext_resource type="Script" path="res://entity/player/states/place_trap.gd" id="8_ighlf"]
 [ext_resource type="Shape2D" uid="uid://buu4bqrlcsnim" path="res://entity/bouncer/bouncer_collision_shape.tres" id="9_wr4gg"]
 [ext_resource type="Shape2D" uid="uid://dgrvqfedxlkwd" path="res://entity/trampoline/trampoline_body_collision_shape.tres" id="11_hdj0x"]
-[ext_resource type="Texture2D" uid="uid://boh7fvq4m5fs4" path="res://entity/player/smoke_fx/smoke_07.png" id="12_1muqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eoukd"]
 size = Vector2(10, 20)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n0hh4"]
+load_path = "res://.godot/imported/smoke_07.png-cf8cdaae37a819ce25549680caa3a634.ctex"
 
 [sub_resource type="Gradient" id="Gradient_5yoo5"]
 interpolation_mode = 2
@@ -102,7 +104,7 @@ position = Vector2(42, -2)
 position = Vector2(0, 4)
 emitting = false
 amount = 20
-texture = ExtResource("12_1muqv")
+texture = SubResource("CompressedTexture2D_n0hh4")
 gravity = Vector2(2.08165e-12, 2.08165e-12)
 angle_max = 360.0
 scale_amount_min = 0.4
