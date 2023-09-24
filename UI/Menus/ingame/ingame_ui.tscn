@@ -1,13 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7plv0c4le36y"]
+[gd_scene load_steps=8 format=3 uid="uid://c7plv0c4le36y"]
 
 [ext_resource type="PackedScene" uid="uid://d1vbhvwcxfn3x" path="res://UI/Menus/ingame/items_counter_left.tscn" id="1_32tfp"]
 [ext_resource type="Script" path="res://UI/Menus/ingame/ingame_ui.gd" id="1_ae14w"]
+[ext_resource type="Texture2D" uid="uid://ckbwoipd1judx" path="res://entity/shop item/pillow_icon.png" id="2_h8fl5"]
+[ext_resource type="PackedScene" uid="uid://b2x0k23y332v" path="res://UI/Menus/ingame/items_counter_right.tscn" id="3_4qe1b"]
+[ext_resource type="Texture2D" uid="uid://c8khoj0jakq6x" path="res://entity/shop item/trampoline_icon.png" id="3_t4p5r"]
+[ext_resource type="Texture2D" uid="uid://bl5ln626eusmv" path="res://entity/shop item/propellor_icon.png" id="4_vmlij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hwrps"]
 font_size = 64
 
 [node name="Ingame UI" type="CanvasLayer"]
 script = ExtResource("1_ae14w")
+trap_icons = Array[Texture2D]([ExtResource("2_h8fl5"), ExtResource("3_t4p5r"), ExtResource("4_vmlij")])
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -70,3 +75,15 @@ size_flags_vertical = 0
 text = "0
 "
 label_settings = SubResource("LabelSettings_hwrps")
+
+[node name="ItemCounterLeft" parent="Dbg coincounter/MarginContainer" instance=ExtResource("1_32tfp")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ItemCounterRight" parent="Dbg coincounter/MarginContainer" instance=ExtResource("3_4qe1b")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8

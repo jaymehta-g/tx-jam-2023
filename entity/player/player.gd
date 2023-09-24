@@ -26,8 +26,17 @@ var current_state: State:
 	get:
 		return $"State Machine".current_state
 
-@export var held_trap_type: TrapType.Types
-var held_trap_amount: int = 0
+var held_trap_type: TrapType.Types:
+	get: return held_trap_type
+	set(value):
+		held_trap_type = value
+		SignalBus.trap_change.emit(self, held_trap_type)
+var held_trap_amount: int = 0:
+	get: return held_trap_amount
+	set(value):
+		held_trap_amount = value
+		SignalBus.trap_amount_changed.emit(self, held_trap_amount)
+
 
 var coin_count: int:
 	get:
