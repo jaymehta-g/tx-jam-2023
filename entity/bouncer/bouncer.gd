@@ -9,6 +9,7 @@ extends Area2D
 var durability = 3
 
 func _ready() -> void:
+	scale = Vector2.ONE * 0.045
 	$"Enable".play("enable")
 	timer.timeout.connect(func(): fade_animation.play("fade out"))
 

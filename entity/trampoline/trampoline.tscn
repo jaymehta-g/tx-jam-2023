@@ -1,8 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://btxh740bc04eu"]
+[gd_scene load_steps=18 format=3 uid="uid://btxh740bc04eu"]
 
 [ext_resource type="Script" path="res://entity/trampoline/trampoline.gd" id="1_8ymnn"]
-[ext_resource type="Texture2D" uid="uid://hwrn5bfm1ubr" path="res://entity/trampoline/trampoline placeholder.png" id="1_2720g"]
+[ext_resource type="Texture2D" uid="uid://0vrpsirk7ffj" path="res://entity/trampoline/trampoline0.png" id="2_kns0t"]
 [ext_resource type="Shape2D" uid="uid://dgrvqfedxlkwd" path="res://entity/trampoline/trampoline_body_collision_shape.tres" id="2_v0kjf"]
+[ext_resource type="Texture2D" uid="uid://tuqmrnj4wksb" path="res://entity/trampoline/animation/trampoline1.png" id="4_r3f3a"]
+[ext_resource type="Texture2D" uid="uid://dbajhw8rkkt0x" path="res://entity/trampoline/animation/trampoline2.png" id="5_d4dq1"]
+[ext_resource type="Texture2D" uid="uid://uerei6l6ak8w" path="res://entity/trampoline/animation/trampoline3.png" id="6_gk5dg"]
+[ext_resource type="Texture2D" uid="uid://cqnwklwlosibo" path="res://entity/trampoline/animation/trampoline0.png" id="7_uydny"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4r1cw"]
 radius = 4.0
@@ -143,6 +147,56 @@ _data = {
 "fade out": SubResource("Animation_irsra")
 }
 
+[sub_resource type="Animation" id="Animation_q4028"]
+resource_name = "bounce"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visible/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_kns0t"), ExtResource("4_r3f3a"), ExtResource("5_d4dq1"), ExtResource("6_gk5dg"), ExtResource("5_d4dq1"), ExtResource("4_r3f3a"), ExtResource("7_uydny")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visible/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ohaul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visible/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_kns0t")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bim7o"]
+_data = {
+"RESET": SubResource("Animation_ohaul"),
+"bounce": SubResource("Animation_q4028")
+}
+
 [node name="Trampoline" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 2
@@ -156,8 +210,8 @@ bump_force = 1500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Visible"]
 position = Vector2(0, -7.235)
-scale = Vector2(0.04, 0.04)
-texture = ExtResource("1_2720g")
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_kns0t")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -5.44)
@@ -184,6 +238,11 @@ autostart = true
 [node name="Fade Out Animation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_g1e7m")
+}
+
+[node name="Bounce" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bim7o")
 }
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

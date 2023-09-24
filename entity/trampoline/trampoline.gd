@@ -7,7 +7,7 @@ class_name Trampoline
 @export var bump_force: float
 
 @onready var player_area: Area2D = $"Area2D"
-@onready var spring_anim_player: AnimationPlayer = $"AnimationPlayer"
+@onready var spring_anim_player: AnimationPlayer = $"Bounce"
 @onready var fade_anim_player: AnimationPlayer = $"Fade Out Animation"
 @onready var disappear_timer: Timer = $"Disappear Timer"
 
@@ -42,4 +42,5 @@ func _on_area_2d_body_entered(body:Node2D) -> void:
 
 	player.bounce(bounce_vector, magnitude)
 	player.play_bounce()
-	spring_anim_player.play("spring")
+	spring_anim_player.play("bounce")
+	spring_anim_player.animation_finished.connect(func(_a): queue_free())
