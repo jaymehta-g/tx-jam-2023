@@ -41,7 +41,7 @@ func state_process_physics(delta: float) -> void:
 		in_air = true
 		player.velocity.y += stats.gravity_accel * delta
 	
-	if player.fall_sfx and in_air and player.is_on_floor():
+	if in_air and player.is_on_floor():
 		in_air = false
 	
 	player.move_and_slide()
