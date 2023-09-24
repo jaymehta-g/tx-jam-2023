@@ -7,3 +7,4 @@ var PROPELLOR_SCENE = preload("res://entity/propellor/propellor.tscn")
 #r SMOKE_TRAIL_SCENE = preload("res://entity/player/smoke_fx/flying_smoke_particles.tscn")
 
 var GAME_SCENE = preload("res://game/game.tscn")
+var ENDING_SCENE = preload("res://UI/Ending Menu/Ending Menu.tscn")

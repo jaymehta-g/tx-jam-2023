@@ -83,6 +83,10 @@ func bounce(dir: Vector2, strength: float) -> void: # needs to be here bc
 
 func die() -> void:
 	death_count += 1
+	if type == Type.P1:
+		Globals.player_1_deaths += 1
+	else:
+		Globals.player_1_deaths += 2
 	velocity = Vector2.ZERO
 	if respawn_location: position= respawn_location.position
 	else: position = Vector2.ZERO
