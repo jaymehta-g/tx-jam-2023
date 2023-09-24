@@ -21,9 +21,9 @@ func _process(delta: float) -> void:
 	var hide: bool = false
 	for player in Globals.players:
 		if player.position.y > 500:
-			if not left and player.position.x < 300:
+			if left and player.position.x < 300:
 				hide = true
-			if left and player.position.y > 840:
+			if not left and player.position.x > 840:
 				hide = true
 	if hide:
 		modulate = fade_color

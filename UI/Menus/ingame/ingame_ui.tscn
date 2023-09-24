@@ -41,13 +41,13 @@ theme_override_constants/margin_bottom = 20
 [node name="ItemCounterLeft" parent="Dbg coincounter/MarginContainer" instance=ExtResource("1_32tfp")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="ItemCounterRight" parent="Dbg coincounter/MarginContainer" instance=ExtResource("3_4qe1b")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 8
 fade_color = Color(0, 0, 0, 1)
 left = false
