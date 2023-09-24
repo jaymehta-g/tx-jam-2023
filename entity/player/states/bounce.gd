@@ -7,8 +7,6 @@ var stats: PlayerStats
 @export var left_raycast: RayCast2D
 @export var remote_transform: RemoteTransform2D
 
-var fly_particles: GPUParticles2D
-
 var new_velocity: Vector2
 
 func state_process_physics(delta: float) -> void:
@@ -38,19 +36,7 @@ func state_process_physics(delta: float) -> void:
 	player.velocity = new_velocity
 	player.move_and_slide()
 
-	# juice
-	const EMISSION_BY_SPEED := 4
-	var particles_speed := new_velocity.length()
-	fly_particles.amount = floori(EMISSION_BY_SPEED*particles_speed)
-
 func state_enter() -> void:
 	player = base
 	stats = player.stats
 	new_velocity = player.velocity
-	fly_particles = ResourceManager.SMOKE_TRAIL_SCENE.instantiate()
-	fly_particles.set_emitting(true)
-	player.add_to_level.emit(fly_particles)
-	remote_transform.remote_path = fly_particles.get_path()
-
-func state_exit() -> void:
-	fly_particles.queue_free()

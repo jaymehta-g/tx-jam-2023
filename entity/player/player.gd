@@ -20,6 +20,10 @@ var facing_right_multiplier: int:
 		return 1 if facing_right else -1
 var can_dash := false
 
+var current_state: State:
+	get:
+		return $"State Machine".current_state
+
 @export var held_trap_type: TrapType.Types
 var held_trap_amount: int = 3
 

@@ -3,6 +3,7 @@ extends State
 @export var trap_collision_container: Node2D # for flipping them on player turn around
 @export var bouncer_shape_cast: Area2D
 @export var trampoline_shape: Area2D
+@export var propellor_location: Node2D
 
 var player: Player
 
@@ -40,6 +41,14 @@ func place_trap(trap: int) -> bool:
 			node.position += player.position 
 			node.init(player.facing_right)
 			player.add_to_level.emit(node)
+	if trap == TrapType.Types.PROPELLOR:
+		var node := ResourceManager.PROPELLOR_SCENE.instantiate() as Node2D
+		node.position = propellor_location.position
+		node.position.x *= player.facing_right_multiplier
+		node.scale.x = player.facing_right_multiplier
+		node.position += player.position 
+		player.add_to_level.emit(node)
+		node.init(player)
 	return true
 
 func _process(delta: float) -> void:

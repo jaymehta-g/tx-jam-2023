@@ -47,16 +47,17 @@ one_shot = true
 script = ExtResource("4_fkyjq")
 right_raycast = NodePath("../../Wall Detectors/Right Cast")
 left_raycast = NodePath("../../Wall Detectors/Left Cast")
-remote_transform = NodePath("../../RemoteTransform2D")
+remote_transform = NodePath("")
 
 [node name="Dash" type="Node" parent="State Machine"]
 script = ExtResource("8_362mj")
 
-[node name="Place" type="Node" parent="State Machine" node_paths=PackedStringArray("trap_collision_container", "bouncer_shape_cast", "trampoline_shape")]
+[node name="Place" type="Node" parent="State Machine" node_paths=PackedStringArray("trap_collision_container", "bouncer_shape_cast", "trampoline_shape", "propellor_location")]
 script = ExtResource("8_ighlf")
 trap_collision_container = NodePath("../../Trap Place Collision Checks")
 bouncer_shape_cast = NodePath("../../Trap Place Collision Checks/Bouncer Placement")
 trampoline_shape = NodePath("../../Trap Place Collision Checks/Trampoline Placement")
+propellor_location = NodePath("../../Propellor Place Location")
 
 [node name="Trap Place Collision Checks" type="Node2D" parent="."]
 
@@ -90,4 +91,5 @@ position = Vector2(0, 3.98)
 target_position = Vector2(-11.24, 0)
 collision_mask = 2
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+[node name="Propellor Place Location" type="Marker2D" parent="."]
+position = Vector2(42, -2)
