@@ -56,19 +56,22 @@ signal add_to_level(node: Node)
 signal use(player: Player) # pass in self to show who used
 
 func _ready() -> void:
-	if $Sprite2D:
-		$Sprite2D.modulate = dbg_color
 	coin_count = coin_count # to update the counters
 	if Globals.players.find(self) == -1:
 		Globals.players.append(self)
+		
+	walk()
+	idle()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed(input_maps.left):
 		facing_right = false
 	if Input.is_action_pressed(input_maps.right):
 		facing_right = true	
-	if $Sprite2D:
-		$Sprite2D.scale.x = abs($Sprite2D.scale.x) * facing_right_multiplier
+	
+	$"player 1".scale.x = -abs($"player 1".scale.x) * facing_right_multiplier
+	$"player 2".scale.x = -abs($"player 2".scale.x) * facing_right_multiplier
+
 	# debugging crap
 	if position.y > 700:
 		die()
@@ -105,3 +108,15 @@ func play_bounce() -> void:
 
 func _on_hurtbox_body_entered(body:Node2D) -> void:
 	die()
+
+func walk() -> void:
+	if type == Type.P1:
+		$"player 1".play("walk")
+		$"player 1".visible = true
+	else:
+		$"player 2".play("walk")
+		$"player 2".visible = true
+
+func idle() -> void:
+	$"player 2".stop()
+	$"player 1".stop()
