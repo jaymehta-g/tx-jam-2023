@@ -1,121 +1,154 @@
 [gd_scene load_steps=9 format=3 uid="uid://b1tlouttff55g"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_b50ab"]
-[ext_resource type="PackedScene" uid="uid://bvjb86j56uq6r" path="res://level/levels/proto level 2.tscn" id="2_xrfan"]
 [ext_resource type="PackedScene" uid="uid://xtp5dguaero" path="res://entity/player/player.tscn" id="3_ato3j"]
 [ext_resource type="Resource" uid="uid://dtthxkh2jghv6" path="res://entity/player/p1_input_maps.tres" id="4_y1lja"]
 [ext_resource type="PackedScene" uid="uid://iuukycwm4xas" path="res://entity/cheese coin/coin_spawner.tscn" id="5_0wr7q"]
 [ext_resource type="PackedScene" uid="uid://c7plv0c4le36y" path="res://UI/Menus/ingame/ingame_ui.tscn" id="6_kpacs"]
 [ext_resource type="PackedScene" uid="uid://kdl0ljmoy1ti" path="res://entity/shop/shop.tscn" id="7_bhr8s"]
 [ext_resource type="AudioStream" uid="uid://bwhndygd45swe" path="res://Audio/Music/Helter_Skelter_Bouncer_Park-1.wav" id="8_5vatp"]
+[ext_resource type="PackedScene" path="res://level/levels/full level.tscn" id="8_yb8uw"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
 metadata/_edit_lock_ = true
 
-[node name="Level" parent="." instance=ExtResource("2_xrfan")]
+[node name="full level" parent="." instance=ExtResource("8_yb8uw")]
 metadata/_edit_lock_ = true
 
 [node name="Player1" parent="." node_paths=PackedStringArray("respawn_location") instance=ExtResource("3_ato3j")]
-position = Vector2(163, 77)
+position = Vector2(128, 488)
 input_maps = ExtResource("4_y1lja")
 dbg_color = Color(1, 0, 0, 1)
-respawn_location = NodePath("../Marker2D2")
+respawn_location = NodePath("../P1 Respawn")
 
 [node name="Player2" parent="." node_paths=PackedStringArray("respawn_location") instance=ExtResource("3_ato3j")]
-position = Vector2(163, 77)
+position = Vector2(1024, 520)
 dbg_color = Color(0.87451, 1, 0, 1)
-respawn_location = NodePath("../Marker2D2")
+respawn_location = NodePath("../P2 Respawn")
 type = 1
 
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(945, 351)
+[node name="P1 Respawn" type="Marker2D" parent="."]
+position = Vector2(128, 488)
 
-[node name="Marker2D2" type="Marker2D" parent="."]
-position = Vector2(230, 85)
+[node name="P2 Respawn" type="Marker2D" parent="."]
+position = Vector2(1016, 528)
 
 [node name="Coin Spawners" type="Node2D" parent="."]
 
 [node name="Coin Spawner" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(524, 301)
-gizmo_extents = 63.8
+position = Vector2(336, 288)
 
 [node name="Coin Spawner2" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(256, 432)
-gizmo_extents = 63.8
+position = Vector2(64, 224)
 
 [node name="Coin Spawner3" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(296, 432)
-gizmo_extents = 63.8
+position = Vector2(128, 224)
 
 [node name="Coin Spawner4" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(336, 432)
-gizmo_extents = 63.8
+position = Vector2(192, 224)
 
 [node name="Coin Spawner5" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(159.8, 240)
-gizmo_extents = 63.8
+position = Vector2(416, 72)
 
 [node name="Coin Spawner6" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(199.6, 239.8)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner10" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(136, 536)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner11" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(264, 536)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner12" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(392, 536)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner13" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(520, 536)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner14" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(784, 112)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner17" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(744, 232)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner18" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(344, 176)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner15" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(904, 112)
-gizmo_extents = 63.8
-
-[node name="Coin Spawner16" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(1016, 112)
-gizmo_extents = 63.8
+position = Vector2(480, 72)
 
 [node name="Coin Spawner7" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(607.8, 431.8)
-gizmo_extents = 63.8
+position = Vector2(544, 72)
 
 [node name="Coin Spawner8" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(647.8, 431.8)
-gizmo_extents = 63.8
+position = Vector2(608, 72)
 
 [node name="Coin Spawner9" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
-position = Vector2(687.8, 431.8)
-gizmo_extents = 63.8
+position = Vector2(672, 72)
+
+[node name="Coin Spawner10" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(736, 72)
+
+[node name="Coin Spawner11" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(992, 88)
+
+[node name="Coin Spawner12" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(1024, 200)
+
+[node name="Coin Spawner13" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(992, 304)
+
+[node name="Coin Spawner14" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(928, 304)
+
+[node name="Coin Spawner15" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(864, 304)
+
+[node name="Coin Spawner16" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(704, 304)
+
+[node name="Coin Spawner17" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(640, 304)
+
+[node name="Coin Spawner18" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(576, 304)
+
+[node name="Coin Spawner19" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(512, 304)
+
+[node name="Coin Spawner22" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(416, 448)
+
+[node name="Coin Spawner20" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(512, 216)
+
+[node name="Coin Spawner21" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(640, 216)
+
+[node name="Coin Spawner23" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(512, 512)
+
+[node name="Coin Spawner33" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(448, 576)
+
+[node name="Coin Spawner24" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(576, 512)
+
+[node name="Coin Spawner25" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(704, 512)
+
+[node name="Coin Spawner27" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(768, 560)
+
+[node name="Coin Spawner28" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(832, 560)
+
+[node name="Coin Spawner29" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(928, 448)
+
+[node name="Coin Spawner30" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(992, 448)
+
+[node name="Coin Spawner31" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(1056, 448)
+
+[node name="Coin Spawner32" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(1120, 448)
+
+[node name="Coin Spawner26" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(640, 512)
+
+[node name="Coin Spawner34" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(384, 576)
+
+[node name="Coin Spawner35" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(320, 576)
 
 [node name="Ingame UI" parent="." instance=ExtResource("6_kpacs")]
-
-[node name="Shop" parent="." instance=ExtResource("7_bhr8s")]
-position = Vector2(472, 432)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_5vatp")
 autoplay = true
 
-[connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
-[connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]
+[node name="Shop" parent="." instance=ExtResource("7_bhr8s")]
+position = Vector2(576, 144)
+
+[connection signal="add_to_level" from="Player1" to="full level" method="recieve_node"]
+[connection signal="add_to_level" from="Player2" to="full level" method="recieve_node"]

@@ -4,7 +4,7 @@
 
 [node name="Coin Spawner" type="Marker2D"]
 script = ExtResource("1_h7ok6")
-time_max = 100.0
+time_max = 150.0
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
