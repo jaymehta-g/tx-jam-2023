@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwa1krbvosih5"]
+
+[ext_resource type="AudioStream" uid="uid://bwhndygd45swe" path="res://Audio/Music/Helter_Skelter_Bouncer_Park-1.wav" id="1_6t7m0"]
+
+[node name="Game Music Player" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6t7m0")
+volume_db = 10.0
+autoplay = true

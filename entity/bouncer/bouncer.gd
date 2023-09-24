@@ -32,6 +32,7 @@ func _on_body_entered(body:Node2D) -> void:
 	durability -= 1
 
 	$"Bounce".play("bounce")
+	player.play_bounce()
 	fade_animation.play("RESET")
 
 	timer.start()

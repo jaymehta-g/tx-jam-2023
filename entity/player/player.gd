@@ -66,3 +66,20 @@ func _process(_delta: float) -> void:
 func bounce(dir: Vector2, strength: float) -> void: # needs to be here bc
 	velocity = dir.normalized() * strength			# this behavior happens regardless of state
 	$"State Machine".go_to_state("bounce")			# kinda ugly but wtv
+
+func play_pipe() -> void:
+	var funny: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(funny)
+	funny.stream = load("res://Audio/Sound Effects/Metal Pipe.wav")
+	funny.pitch_scale = randf_range(0.5, 1.5)
+	funny.volume_db = -25
+	funny.play(0)
+	funny.finished.connect(func(): funny.queue_free())
+
+func play_bounce() -> void:
+	var funny: AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(funny)
+	funny.stream = load("res://Audio/Sound Effects/boing.wav")
+	funny.volume_db = -10
+	funny.play(0)
+	funny.finished.connect(func(): funny.queue_free())
