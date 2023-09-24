@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://crsw180kvm2hw"
-path="res://.godot/imported/JudgementOfDogGod-1.wav-b741c8f3abd761051b0f45daa4d9ecc8.sample"
+path="res://.godot/imported/JudgementOfDogGod-1.wav-877daa83deb872a718fd463838c9c44d.sample"
 
 [deps]
 
-source_file="res://Music/JudgementOfDogGod-1.wav"
-dest_files=["res://.godot/imported/JudgementOfDogGod-1.wav-b741c8f3abd761051b0f45daa4d9ecc8.sample"]
+source_file="res://Audio/Music/JudgementOfDogGod-1.wav"
+dest_files=["res://.godot/imported/JudgementOfDogGod-1.wav-877daa83deb872a718fd463838c9c44d.sample"]
 
 [params]
 

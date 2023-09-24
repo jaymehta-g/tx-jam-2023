@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4k6v6fo3yhu4"
+path="res://.godot/imported/Metal Pipe.wav-67b20ad5a60b1eb14c6eb46462b43b70.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Metal Pipe.wav"
+dest_files=["res://.godot/imported/Metal Pipe.wav-67b20ad5a60b1eb14c6eb46462b43b70.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

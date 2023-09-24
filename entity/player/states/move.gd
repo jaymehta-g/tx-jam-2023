@@ -9,6 +9,8 @@ var jump_input: bool
 
 var stats: PlayerStats
 
+var in_air: bool
+
 func state_enter() -> void:
 	player = base
 	stats = player.stats
@@ -36,5 +38,13 @@ func state_process_physics(delta: float) -> void:
 			player.velocity.y = -stats.jump_velocity
 		player.can_dash = true # put this here bc it uses a physics method
 	else:
+		in_air = true
 		player.velocity.y += stats.gravity_accel * delta
+	
+	if in_air and player.is_on_floor():
+		in_air = false
+		player.fall_sfx.pitch_scale = randf_range(0.75, 3)
+		player.fall_sfx.stop()
+		player.fall_sfx.play(0)
+	
 	player.move_and_slide()

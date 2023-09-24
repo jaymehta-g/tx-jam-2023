@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cn2h34wykvc5f"
-path="res://.godot/imported/A_Little_Bit_of_Happiness-1.wav-36868445e10cf41d758711d1e9d5c168.sample"
+path="res://.godot/imported/A_Little_Bit_of_Happiness-1.wav-253431432640520fd51bb4d4ff439791.sample"
 
 [deps]
 
-source_file="res://Music/A_Little_Bit_of_Happiness-1.wav"
-dest_files=["res://.godot/imported/A_Little_Bit_of_Happiness-1.wav-36868445e10cf41d758711d1e9d5c168.sample"]
+source_file="res://Audio/Music/A_Little_Bit_of_Happiness-1.wav"
+dest_files=["res://.godot/imported/A_Little_Bit_of_Happiness-1.wav-253431432640520fd51bb4d4ff439791.sample"]
 
 [params]
 

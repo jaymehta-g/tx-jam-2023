@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b4qdutm0qg73n"]
+[gd_scene load_steps=19 format=3 uid="uid://b4qdutm0qg73n"]
 
 [ext_resource type="Script" path="res://UI/Main Menu/main_menu.gd" id="1_v7eka"]
 [ext_resource type="Texture2D" uid="uid://b28wh53d1so7n" path="res://UI/Main Menu/MainMenuBackground.png" id="2_7ueoc"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cvrcq7d5s80dk" path="res://UI/Main Menu/Coin Animation/money3.png" id="12_uh0cm"]
 [ext_resource type="Texture2D" uid="uid://b7oyar5p0t2m4" path="res://UI/Main Menu/Coin Animation/money4.png" id="13_76lcx"]
 [ext_resource type="Texture2D" uid="uid://rxvceim2gxj6" path="res://UI/Main Menu/Coin Animation/money5.png" id="14_vwo08"]
-[ext_resource type="AudioStream" uid="uid://crsw180kvm2hw" path="res://Music/JudgementOfDogGod-1.wav" id="15_ggcoo"]
+[ext_resource type="AudioStream" uid="uid://crsw180kvm2hw" path="res://Audio/Music/JudgementOfDogGod-1.wav" id="15_5uwhh"]
+[ext_resource type="AudioStream" uid="uid://cvvmerdxsve33" path="res://Audio/Sound Effects/Coin_flip.wav" id="16_5s8a3"]
+[ext_resource type="AudioStream" uid="uid://0y4qpj3kbhg8" path="res://Audio/Sound Effects/Coin_land.mp3" id="17_8jbnk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vjgf"]
 resource_name = "Flipping"
@@ -68,7 +70,7 @@ script = ExtResource("1_v7eka")
 one_shot = true
 
 [node name="Final Wait" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.0
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -132,9 +134,19 @@ animation = &"Flipping"
 frame = 5
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_ggcoo")
+stream = ExtResource("15_5uwhh")
 volume_db = 7.0
 autoplay = true
+
+[node name="Coin Flip Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_5s8a3")
+volume_db = 10.0
+pitch_scale = 0.5
+
+[node name="Coin Flip End" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_8jbnk")
+volume_db = 5.0
+pitch_scale = 0.6
 
 [connection signal="timeout" from="Initial Wait" to="." method="_on_initial_wait_timeout"]
 [connection signal="timeout" from="Final Wait" to="." method="_on_final_wait_timeout"]

@@ -41,6 +41,8 @@ func state_enter() -> void:
 	player = base
 	stats = player.stats
 	new_velocity = player.velocity
+	player.boing_sfx.play(0) 
+	
 
 func state_exit() -> void:
 	($"../../CPUParticles2D" as CPUParticles2D).emitting = false
