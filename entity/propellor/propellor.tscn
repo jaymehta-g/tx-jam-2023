@@ -18,7 +18,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_0fmug")
 }],
-"loop": true,
+"loop": false,
 "name": &"end",
 "speed": 24.0
 }, {
@@ -32,18 +32,18 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_ikme3")
 }],
-"loop": false,
+"loop": true,
 "name": &"spinning",
 "speed": 24.0
 }, {
 "frames": [{
-"duration": 6.0,
+"duration": 1.0,
 "texture": ExtResource("2_qg5io")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": ExtResource("8_gegii")
 }],
-"loop": true,
+"loop": false,
 "name": &"start-up",
 "speed": 24.0
 }]
@@ -57,8 +57,8 @@ strength = 1000.0
 coll_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-39, 41)
-scale = Vector2(-0.43, 0.43)
+position = Vector2(-37, -7)
+scale = Vector2(-0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_h1d5b")
 animation = &"start-up"
 
@@ -78,4 +78,4 @@ wait_time = 1.5
 one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="timeout" from="Wait To Erase Timer" to="." method="queue_free"]
+[connection signal="timeout" from="Wait To Erase Timer" to="." method="_on_wait_to_erase_timer_timeout"]
