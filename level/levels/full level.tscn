@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://cfyycibv1xs8j"]
+[gd_scene load_steps=6 format=3 uid="uid://cfyycibv1xs8j"]
+
+[ext_resource type="Script" path="res://level/levels/level.gd" id="1_iyhia"]
+[ext_resource type="Texture2D" uid="uid://litlvbl0rlc" path="res://level/levels/Level Assets/gamebk.png" id="2_a7rxg"]
+[ext_resource type="PackedScene" uid="uid://rdg6ri6w0jt5" path="res://level/objects/real platforms/large platform.tscn" id="3_3mwkp"]
+[ext_resource type="PackedScene" uid="uid://cd0ti3r7mdlca" path="res://level/objects/real platforms/mediumer platform.tscn" id="4_1th8x"]
+[ext_resource type="PackedScene" uid="uid://b3drdiia0u0k4" path="res://level/objects/real platforms/small platform.tscn" id="5_5ignm"]
 
 [node name="full level" type="Node2D"]
+script = ExtResource("1_iyhia")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_a7rxg")
+metadata/_edit_lock_ = true
+
+[node name="large platform" parent="." instance=ExtResource("3_3mwkp")]
+position = Vector2(558, 185)
+scale = Vector2(1, 0.5)
+
+[node name="mediumer platform" parent="." instance=ExtResource("4_1th8x")]
+position = Vector2(572, 55)
+scale = Vector2(1, 0.5)
+
+[node name="small platform" parent="." instance=ExtResource("5_5ignm")]
+position = Vector2(566, 327)
+scale = Vector2(1, 0.5)
