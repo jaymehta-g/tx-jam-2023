@@ -41,4 +41,5 @@ func _on_area_2d_body_entered(body:Node2D) -> void:
 	var magnitude := bounce_vector.length()
 
 	player.bounce(bounce_vector, magnitude)
+	player.play_bounce()
 	spring_anim_player.play("spring")

@@ -43,8 +43,5 @@ func state_process_physics(delta: float) -> void:
 	
 	if player.fall_sfx and in_air and player.is_on_floor():
 		in_air = false
-		player.fall_sfx.pitch_scale = randf_range(0.75, 3)
-		player.fall_sfx.stop()
-		player.fall_sfx.play(0)
 	
 	player.move_and_slide()

@@ -21,14 +21,18 @@ func state_process_physics(delta: float) -> void:
 	# bounce around
 	if player.is_on_floor() and new_velocity.y > 0:
 		new_velocity.y = -absf(new_velocity.y) * BOUNCE_DAMP
+		player.play_pipe()
 	if player.is_on_ceiling() and new_velocity.y < 0:
 		new_velocity.y = absf(new_velocity.y) * BOUNCE_DAMP
+		player.play_pipe()
 	if player.is_on_wall():
 		var abs_x_vel := absf(new_velocity.x)
 		if right_raycast.is_colliding() and new_velocity.x > 0:
 			new_velocity.x = -abs_x_vel * BOUNCE_DAMP
+			player.play_pipe()
 		elif left_raycast.is_colliding() and new_velocity.x < 0:
 			new_velocity.x = abs_x_vel * BOUNCE_DAMP
+			player.play_pipe()
 
 	# horizontal damping so you can come to a stop
 	new_velocity.x -= new_velocity.x * 2 * delta
@@ -41,10 +45,7 @@ func state_enter() -> void:
 	player = base
 	stats = player.stats
 	new_velocity = player.velocity
-	if player.boing_sfx:
-		player.boing_sfx.play(0) 
 	
-
 func state_exit() -> void:
 	($"../../CPUParticles2D" as CPUParticles2D).emitting = false
 	pass
