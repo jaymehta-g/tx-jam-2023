@@ -49,6 +49,7 @@ collision_layer = 0
 script = ExtResource("1_m6j6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_yopa1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
