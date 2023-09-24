@@ -41,7 +41,8 @@ func state_enter() -> void:
 	player = base
 	stats = player.stats
 	new_velocity = player.velocity
-	player.boing_sfx.play(0) 
+	if player.boing_sfx:
+		player.boing_sfx.play(0) 
 	
 
 func state_exit() -> void:
