@@ -171,3 +171,25 @@ scale = Vector2(0.06, 0.05)
 [node name="blanket8" parent="Blankets" instance=ExtResource("7_4tfhq")]
 position = Vector2(648, 421)
 scale = Vector2(0.15, 0.15)
+
+[node name="blanket11" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(1362, 356)
+rotation = 1.5708
+scale = Vector2(0.8, 0.25)
+
+[node name="blanket12" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(1242, 20)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket13" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(-106, 19)
+scale = Vector2(0.2, 0.2)
+
+[node name="blanket14" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(-199, 376)
+rotation = 1.5708
+scale = Vector2(0.8, 0.25)
+
+[node name="blanket15" parent="Blankets" instance=ExtResource("7_4tfhq")]
+position = Vector2(526, 679)
+scale = Vector2(1.7, 0.25)
