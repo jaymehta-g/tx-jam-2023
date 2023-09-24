@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c564wxo7xsleg"]
+[gd_scene load_steps=10 format=3 uid="uid://c564wxo7xsleg"]
 
 [ext_resource type="Script" path="res://entity/shop item/shop_item.gd" id="1_0h2fr"]
-[ext_resource type="Texture2D" uid="uid://g2wilstv4d8y" path="res://icon.svg" id="1_jkhyq"]
 [ext_resource type="PackedScene" uid="uid://cup0tje0xcyd4" path="res://entity/shop item/ui/price_display.tscn" id="2_oeles"]
+[ext_resource type="Texture2D" uid="uid://ckbwoipd1judx" path="res://entity/shop item/pillow_icon.png" id="2_sf6n4"]
+[ext_resource type="Texture2D" uid="uid://c8khoj0jakq6x" path="res://entity/shop item/trampoline_icon.png" id="3_mqnec"]
+[ext_resource type="Texture2D" uid="uid://bl5ln626eusmv" path="res://entity/shop item/propellor_icon.png" id="4_a0hnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12vhy"]
 size = Vector2(96, 96)
@@ -48,10 +50,11 @@ _data = {
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
 script = ExtResource("1_0h2fr")
+icon_textures = Array[Texture2D]([ExtResource("2_sf6n4"), ExtResource("3_mqnec"), ExtResource("4_a0hnk")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_jkhyq")
+scale = Vector2(0.215, 0.215)
+texture = ExtResource("3_mqnec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_12vhy")

@@ -2,6 +2,8 @@ extends Area2D
 
 class_name ShopItem
 
+@export var icon_textures: Array[Texture2D]
+
 var current_player_interacting: Player: # null if nobody there
 	get:
 		return current_player_interacting
@@ -18,6 +20,7 @@ var current_player_interacting: Player: # null if nobody there
 var type: TrapType.Types:
 	set(value):
 		type = value
+		$"Sprite2D".texture = icon_textures[value]
 	get: return type
 
 const prices = {
