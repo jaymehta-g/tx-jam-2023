@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7plv0c4le36y" path="res://UI/Menus/ingame/ingame_ui.tscn" id="6_kpacs"]
 [ext_resource type="PackedScene" uid="uid://kdl0ljmoy1ti" path="res://entity/shop/shop.tscn" id="7_bhr8s"]
 [ext_resource type="AudioStream" uid="uid://bwhndygd45swe" path="res://Audio/Music/Helter_Skelter_Bouncer_Park-1.wav" id="8_5vatp"]
-[ext_resource type="PackedScene" path="res://level/levels/full level.tscn" id="8_yb8uw"]
+[ext_resource type="PackedScene" uid="uid://cfyycibv1xs8j" path="res://level/levels/full level.tscn" id="8_yb8uw"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
