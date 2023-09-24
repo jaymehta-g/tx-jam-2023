@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2x0k23y332v"]
+
+[ext_resource type="PackedScene" uid="uid://d1vbhvwcxfn3x" path="res://UI/Menus/ingame/items_counter_left.tscn" id="1_lny0y"]
+
+[node name="Items Counter Right" instance=ExtResource("1_lny0y")]
+
+[node name="HBoxContainer" parent="MarginContainer" index="0"]
+alignment = 2

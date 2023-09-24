@@ -43,11 +43,10 @@ script = ExtResource("3_7275l")
 wait_time = 0.2
 one_shot = true
 
-[node name="Bounce" type="Node" parent="State Machine" node_paths=PackedStringArray("right_raycast", "left_raycast", "remote_transform")]
+[node name="Bounce" type="Node" parent="State Machine" node_paths=PackedStringArray("right_raycast", "left_raycast")]
 script = ExtResource("4_fkyjq")
 right_raycast = NodePath("../../Wall Detectors/Right Cast")
 left_raycast = NodePath("../../Wall Detectors/Left Cast")
-remote_transform = NodePath("")
 
 [node name="Dash" type="Node" parent="State Machine"]
 script = ExtResource("8_362mj")
