@@ -1,69 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://chk8q1f37s86n"]
 
 [ext_resource type="Script" path="res://entity/bouncer/bouncer.gd" id="1_bekp5"]
-[ext_resource type="Texture2D" uid="uid://cv0am550j0hl2" path="res://entity/bouncer/ball_red_large.png" id="2_10p4f"]
+[ext_resource type="Texture2D" uid="uid://dgfy4memxkrso" path="res://entity/bouncer/pillow0.png" id="2_xjxni"]
 [ext_resource type="Shape2D" uid="uid://buu4bqrlcsnim" path="res://entity/bouncer/bouncer_collision_shape.tres" id="3_yqxns"]
-
-[sub_resource type="Animation" id="Animation_defln"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.22, 0.22)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_lmavs"]
-resource_name = "enable"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.22, 0.22), Vector2(0.22, 0.22), Vector2(0.22, 0.22), Vector2(0.505, 0.505)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_73134"]
-_data = {
-"RESET": SubResource("Animation_defln"),
-"enable": SubResource("Animation_lmavs")
-}
 
 [sub_resource type="Animation" id="Animation_bs4q3"]
 length = 0.001
@@ -77,37 +16,37 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.505, 0.505)]
+"values": [Vector2(0.14, 0.14)]
 }
 
 [sub_resource type="Animation" id="Animation_h7q2r"]
 resource_name = "bounce"
 length = 0.2
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:scale")
-tracks/0/interp = 2
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.89, 0.89), Vector2(0.505, 0.505)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"destroy_if_durability_out"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.27, 0.27), Vector2(0.14, 0.14)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aly7y"]
@@ -140,7 +79,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.505, 0.505)]
+"values": [Vector2(0.14, 0.14)]
 }
 
 [sub_resource type="Animation" id="Animation_wyw70"]
@@ -168,7 +107,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.505, 0.505), Vector2(1, 1)]
+"values": [Vector2(0.14, 0.14), Vector2(0.295, 0.295)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vhkph"]
@@ -209,24 +148,80 @@ _data = {
 "remove": SubResource("Animation_x6adm")
 }
 
+[sub_resource type="Animation" id="Animation_defln"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.045, 0.045)]
+}
+
+[sub_resource type="Animation" id="Animation_lmavs"]
+resource_name = "enable"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.045, 0.045), Vector2(0.14, 0.14)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73134"]
+_data = {
+"RESET": SubResource("Animation_defln"),
+"enable": SubResource("Animation_lmavs")
+}
+
 [node name="Bouncer" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_bekp5")
 strength = 1000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.505, 0.505)
-texture = ExtResource("2_10p4f")
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_xjxni")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = ExtResource("3_yqxns")
 disabled = true
 debug_color = Color(0, 0.6, 0.701961, 0.0784314)
-
-[node name="Enable" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_73134")
-}
 
 [node name="Bounce" type="AnimationPlayer" parent="."]
 libraries = {
@@ -247,5 +242,12 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_nk0ho")
 }
+
+[node name="Enable" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_73134")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
