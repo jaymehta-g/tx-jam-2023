@@ -13,6 +13,8 @@ func _ready():
 			background.texture = load("res://UI/Ending Menu/player_1_win.png")
 		else:
 			background.texture = load("res://UI/Ending Menu/player_2_win.png")
+	
+	$"AudioStreamPlayer".finished.connect(func(): $"AudioStreamPlayer".playing = true)
 
 func _on_button_pressed():
 	
