@@ -41,5 +41,5 @@ func _process(delta: float) -> void:
 	var total_seconds = floori(timer.time_left)
 	var mins: int = total_seconds / 60
 	var seconds: int = total_seconds % 60
-	var text := "%s:%s" % [mins,seconds]
+	var text := "%s:%02d" % [mins,seconds]
 	timer_display.text = text
