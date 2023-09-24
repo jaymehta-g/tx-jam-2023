@@ -8,7 +8,7 @@ static var player_1_boon: bool
 @onready var player_2: Player = $"Player2"
 
 func _ready():
-	var music: AudioStreamPlayer# = $"AudioStreamPlayer"
+	var music: AudioStreamPlayer = $"AudioStreamPlayer"
 	if music:
 		music.finished.connect(func(): music.playing = true)
 	
