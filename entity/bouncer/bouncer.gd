@@ -4,6 +4,8 @@ extends Area2D
 @onready var sprite: Sprite2D = $"Sprite2D"
 @onready var timer: Timer = $"Disappear Timer"
 @onready var fade_animation: AnimationPlayer = $"Fade Out Animation"
+@onready var remove_animation: AnimationPlayer = $"Remove Animation"
+
 var durability = 3
 
 func _ready() -> void:
@@ -36,6 +38,6 @@ func _on_body_entered(body:Node2D) -> void:
 
 func destroy_if_durability_out():
 	if durability <= 0:
-		fade_animation.play("fade out")
-		fade_animation.animation_finished.connect(func(_a): queue_free())
+		remove_animation.play("remove")
+		remove_animation.animation_finished.connect(func(_a): queue_free())
 		

@@ -2,8 +2,8 @@ extends Node
 
 var coin: AnimatedSprite2D
 var coin_velocity: float = 0
-var gravity: float = -1.0 / 8
-var coin_launch: float = -25.0 / 5
+var gravity: float = -1.0 / 15
+var coin_launch: float = -21.0 / 3
 var coin_active = false
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +14,8 @@ func _ready():
 func _process(delta):
 	if coin_active:
 		coin.global_position.y += coin_velocity
-		if abs(coin_velocity) < 10:
+		
+		if abs(coin_velocity) < abs(coin_launch / 5):
 			coin_velocity -= gravity / 5
 		else:
 			coin_velocity -= gravity
@@ -28,13 +29,23 @@ func _process(delta):
 			else:
 				coin.frame = 9 # Tails
 			
+			$"Final Wait".start()
 
 
 func _on_texture_button_pressed():
 	$"CanvasLayer/MarginContainer/CenterContainer/TextureButton".visible = false
 	coin = $"CanvasLayer/Coin"
-	coin.play("Flipping")
+	$"Initial Wait".start()
+	pass # Replace with function body.
+
+
+func _on_initial_wait_timeout():
 	coin_active = true
 	coin_velocity = coin_launch
-	#get_tree().change_scene_to_packed(ResourceManager.GAME_SCENE)
+	coin.play("Flipping")
+	pass # Replace with function body.
+
+
+func _on_final_wait_timeout():
+	get_tree().change_scene_to_packed(ResourceManager.GAME_SCENE)
 	pass # Replace with function body.

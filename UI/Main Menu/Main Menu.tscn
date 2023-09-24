@@ -63,6 +63,13 @@ animations = [{
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_v7eka")
 
+[node name="Initial Wait" type="Timer" parent="."]
+one_shot = true
+
+[node name="Final Wait" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
@@ -101,5 +108,8 @@ position = Vector2(576, 523)
 scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_5vjgf")
 animation = &"Flipping"
+frame = 5
 
+[connection signal="timeout" from="Initial Wait" to="." method="_on_initial_wait_timeout"]
+[connection signal="timeout" from="Final Wait" to="." method="_on_final_wait_timeout"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/CenterContainer/TextureButton" to="." method="_on_texture_button_pressed"]
