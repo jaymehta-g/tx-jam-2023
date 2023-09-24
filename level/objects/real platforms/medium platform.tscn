@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5ons0sr2wr5l"]
+
+[ext_resource type="Texture2D" uid="uid://kotxf35sr3s1" path="res://level/objects/real platforms/platform assets/med1.png" id="1_aj8e5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72typ"]
+size = Vector2(338, 57)
+
+[node name="medium platform" type="StaticBody2D"]
+collision_layer = 2
+
+[node name="Med1" type="Sprite2D" parent="."]
+position = Vector2(-16, -12)
+texture = ExtResource("1_aj8e5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 0.5)
+shape = SubResource("RectangleShape2D_72typ")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjoawdprnaxrb"]
+
+[ext_resource type="Texture2D" uid="uid://cov381vi0advr" path="res://level/objects/Blankets/blanketblue.png" id="1_c4ym0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3psi"]
+radius = 97.0
+height = 962.0
+
+[node name="blanket" type="StaticBody2D"]
+
+[node name="Blanketblue" type="Sprite2D" parent="."]
+position = Vector2(134, 127)
+texture = ExtResource("1_c4ym0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t3psi")
