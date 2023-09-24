@@ -23,6 +23,10 @@ ResourceManager="*res://misc/resource_manager.gd"
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Texas Jam 2023"
+
 [input]
 
 p1_up={
