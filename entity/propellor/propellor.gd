@@ -15,7 +15,6 @@ func _ready() -> void:
 func init(player):
 	var particles: GPUParticles2D = $"GPUParticles2D"
 	particles.process_material.gravity.x *= player.facing_right_multiplier
-	print_debug(particles.process_material.gravity)
 	facing_multiplier = player.facing_right_multiplier
 
 func _on_area_2d_body_entered(body:Node2D) -> void:

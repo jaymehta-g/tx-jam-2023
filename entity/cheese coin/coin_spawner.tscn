@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://iuukycwm4xas"]
+
+[ext_resource type="Script" path="res://entity/cheese coin/coin_spawner.gd" id="1_h7ok6"]
+
+[node name="Coin Spawner" type="Marker2D"]
+script = ExtResource("1_h7ok6")
+time_min = 10.0
+time_max = 100.0
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

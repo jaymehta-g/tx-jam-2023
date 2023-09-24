@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1tlouttff55g"]
+[gd_scene load_steps=6 format=3 uid="uid://b1tlouttff55g"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_b50ab"]
 [ext_resource type="PackedScene" uid="uid://bvjb86j56uq6r" path="res://level/levels/proto level 2.tscn" id="2_xrfan"]
 [ext_resource type="PackedScene" uid="uid://xtp5dguaero" path="res://entity/player/player.tscn" id="3_ato3j"]
 [ext_resource type="Resource" uid="uid://dtthxkh2jghv6" path="res://entity/player/p1_input_maps.tres" id="4_y1lja"]
+[ext_resource type="PackedScene" uid="uid://iuukycwm4xas" path="res://entity/cheese coin/coin_spawner.tscn" id="5_0wr7q"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
+metadata/_edit_lock_ = true
 
 [node name="Level" parent="." instance=ExtResource("2_xrfan")]
+metadata/_edit_lock_ = true
 
 [node name="Player1" parent="." node_paths=PackedStringArray("respawn_location") instance=ExtResource("3_ato3j")]
 position = Vector2(163, 77)
@@ -27,6 +30,80 @@ position = Vector2(945, 351)
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 position = Vector2(230, 85)
+
+[node name="Coin Spawners" type="Node2D" parent="."]
+
+[node name="Coin Spawner" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(524, 301)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner2" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(256, 432)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner3" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(296, 432)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner4" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(336, 432)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner5" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(159.8, 240)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner6" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(199.6, 239.8)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner10" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(136, 536)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner11" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(264, 536)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner12" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(392, 536)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner13" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(520, 536)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner14" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(784, 112)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner17" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(744, 232)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner18" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(344, 176)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner15" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(904, 112)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner16" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(1016, 112)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner7" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(607.8, 431.8)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner8" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(647.8, 431.8)
+gizmo_extents = 63.8
+
+[node name="Coin Spawner9" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
+position = Vector2(687.8, 431.8)
+gizmo_extents = 63.8
 
 [connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
 [connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]

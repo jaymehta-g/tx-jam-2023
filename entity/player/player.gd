@@ -27,6 +27,8 @@ var current_state: State:
 @export var held_trap_type: TrapType.Types
 var held_trap_amount: int = 3
 
+var coin_count: int = 0
+
 signal add_to_level(node: Node)
 
 func _ready() -> void:
