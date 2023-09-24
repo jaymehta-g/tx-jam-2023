@@ -11,7 +11,11 @@ func _ready():
 	var music: AudioStreamPlayer = $"AudioStreamPlayer"
 	if music:
 		music.finished.connect(func(): music.playing = true)
-	
+	Globals.timer = Timer.new()
+	add_child(Globals.timer)
+	Globals.timer.wait_time = 150
+	Globals.timer.one_shot = true
+	Globals.timer.start()
 	if player_1_boon:
 		player_1.coin_count += 5
 	else:

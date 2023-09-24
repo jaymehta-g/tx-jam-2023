@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7plv0c4le36y"]
+[gd_scene load_steps=10 format=3 uid="uid://c7plv0c4le36y"]
 
 [ext_resource type="PackedScene" uid="uid://d1vbhvwcxfn3x" path="res://UI/Menus/ingame/items_counter_left.tscn" id="1_32tfp"]
 [ext_resource type="Script" path="res://UI/Menus/ingame/ingame_ui.gd" id="1_ae14w"]
@@ -13,6 +13,10 @@ font_size = 64
 [sub_resource type="LabelSettings" id="LabelSettings_56sqg"]
 font_size = 32
 font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5610"]
+font_size = 30
+font_color = Color(0, 1, 0.109804, 1)
 
 [node name="Ingame UI" type="CanvasLayer"]
 script = ExtResource("1_ae14w")
@@ -93,3 +97,11 @@ layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_56sqg")
 horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="Dbg coincounter/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "0:00"
+label_settings = SubResource("LabelSettings_t5610")

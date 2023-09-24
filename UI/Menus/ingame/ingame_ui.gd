@@ -11,6 +11,8 @@ extends CanvasLayer
 @onready var p1_deaths = %"P1 Deaths"
 @onready var p2_deaths = %"P2 Deaths"
 
+@onready var timer_display = %"Timer"
+
 func _ready() -> void:
 	SignalBus.coin_counter_change.connect(func(player: Player, amount: int):
 		var label := p1_label if player.type == Player.Type.P1 else p2_label
@@ -33,3 +35,11 @@ func _ready() -> void:
 	)
 	p1_traps.set_num_icons(0)
 	p2_traps.set_num_icons(0)
+
+func _process(delta: float) -> void:
+	var timer := Globals.timer
+	var total_seconds = floori(timer.time_left)
+	var mins: int = total_seconds / 60
+	var seconds: int = total_seconds % 60
+	var text := "%s:%s" % [mins,seconds]
+	timer_display.text = text
