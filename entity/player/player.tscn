@@ -34,8 +34,9 @@ input_maps = ExtResource("3_rniwo")
 dbg_color = Color(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.035, 0.035)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("8_h7mt5")
+offset = Vector2(0, 13.23)
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

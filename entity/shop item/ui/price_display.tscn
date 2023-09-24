@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cup0tje0xcyd4"]
+
+[ext_resource type="Script" path="res://entity/shop item/ui/price_display.gd" id="1_ar7kg"]
+[ext_resource type="Texture2D" uid="uid://d22ksotnf70v6" path="res://entity/cheese coin/cheese.png" id="1_yv2iy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfky1"]
+bg_color = Color(1, 1, 1, 0.32549)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtqf5"]
+font_size = 32
+
+[node name="Price Display" type="Control"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ar7kg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wfky1")
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_dtqf5")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_yv2iy")
+expand_mode = 1
+stretch_mode = 5

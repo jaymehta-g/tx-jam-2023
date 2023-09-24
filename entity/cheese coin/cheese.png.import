@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d207ftyleqtiu"
-path="res://.godot/imported/cheese temp.png-3711d6b05a6251dbb72d8e601b38cee9.ctex"
+uid="uid://d22ksotnf70v6"
+path="res://.godot/imported/cheese.png-7187d8c0b655631a6c1677fa3fb2ef01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entity/cheese coin/cheese temp.png"
-dest_files=["res://.godot/imported/cheese temp.png-3711d6b05a6251dbb72d8e601b38cee9.ctex"]
+source_file="res://entity/cheese coin/cheese.png"
+dest_files=["res://.godot/imported/cheese.png-7187d8c0b655631a6c1677fa3fb2ef01.ctex"]
 
 [params]
 

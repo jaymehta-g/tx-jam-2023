@@ -18,7 +18,8 @@ func _ready() -> void:
 
 func state_enter() -> void:
 	player = base
-	place_trap(player.held_trap_type)
+	if place_trap(player.held_trap_type):
+		player.held_trap_amount -= 1
 	transition_state("move")
 
 func place_trap(trap: int) -> bool:

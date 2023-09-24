@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1tlouttff55g"]
+[gd_scene load_steps=7 format=3 uid="uid://b1tlouttff55g"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1_b50ab"]
 [ext_resource type="PackedScene" uid="uid://bvjb86j56uq6r" path="res://level/levels/proto level 2.tscn" id="2_xrfan"]
 [ext_resource type="PackedScene" uid="uid://xtp5dguaero" path="res://entity/player/player.tscn" id="3_ato3j"]
 [ext_resource type="Resource" uid="uid://dtthxkh2jghv6" path="res://entity/player/p1_input_maps.tres" id="4_y1lja"]
 [ext_resource type="PackedScene" uid="uid://iuukycwm4xas" path="res://entity/cheese coin/coin_spawner.tscn" id="5_0wr7q"]
+[ext_resource type="PackedScene" uid="uid://c564wxo7xsleg" path="res://entity/shop item/shop_item.tscn" id="6_bm7r0"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_b50ab")
@@ -104,6 +105,9 @@ gizmo_extents = 63.8
 [node name="Coin Spawner9" parent="Coin Spawners" instance=ExtResource("5_0wr7q")]
 position = Vector2(687.8, 431.8)
 gizmo_extents = 63.8
+
+[node name="Shop Item" parent="." instance=ExtResource("6_bm7r0")]
+position = Vector2(536, 304)
 
 [connection signal="add_to_level" from="Player1" to="Level" method="recieve_node"]
 [connection signal="add_to_level" from="Player2" to="Level" method="recieve_node"]

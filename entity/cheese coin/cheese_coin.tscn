@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://dp87pilria785"]
 
 [ext_resource type="Script" path="res://entity/cheese coin/cheese_coin.gd" id="1_m6j6i"]
-[ext_resource type="Texture2D" uid="uid://d207ftyleqtiu" path="res://entity/cheese coin/cheese temp.png" id="2_o4px8"]
+[ext_resource type="Texture2D" uid="uid://d22ksotnf70v6" path="res://entity/cheese coin/cheese.png" id="2_sgn16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yopa1"]
-radius = 12.1655
+radius = 15.0333
 
 [sub_resource type="Animation" id="Animation_wakye"]
 length = 0.001
@@ -52,9 +52,10 @@ script = ExtResource("1_m6j6i")
 shape = SubResource("CircleShape2D_yopa1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 0.245)
 rotation = -0.139626
-scale = Vector2(0.19, 0.19)
-texture = ExtResource("2_o4px8")
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_sgn16")
 
 [node name="Rocking" type="AnimationPlayer" parent="."]
 autoplay = "rocking"

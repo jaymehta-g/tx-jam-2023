@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://c564wxo7xsleg"]
+
+[ext_resource type="Script" path="res://entity/shop item/shop_item.gd" id="1_0h2fr"]
+[ext_resource type="Texture2D" uid="uid://g2wilstv4d8y" path="res://icon.svg" id="1_jkhyq"]
+[ext_resource type="PackedScene" uid="uid://cup0tje0xcyd4" path="res://entity/shop item/ui/price_display.tscn" id="2_oeles"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12vhy"]
+size = Vector2(96, 96)
+
+[sub_resource type="Animation" id="Animation_vvgbq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Price Display:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_60axb"]
+resource_name = "show"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Price Display:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4uofd"]
+_data = {
+"RESET": SubResource("Animation_vvgbq"),
+"show": SubResource("Animation_60axb")
+}
+
+[node name="Shop Item" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+script = ExtResource("1_0h2fr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_jkhyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_12vhy")
+
+[node name="Price Display" parent="." instance=ExtResource("2_oeles")]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -150.0
+offset_right = 50.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+
+[node name="Show Hide Price" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4uofd")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

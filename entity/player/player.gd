@@ -30,6 +30,7 @@ var held_trap_amount: int = 3
 var coin_count: int = 0
 
 signal add_to_level(node: Node)
+signal use(player: Player) # pass in self to show who used
 
 func _ready() -> void:
 	if $Sprite2D:

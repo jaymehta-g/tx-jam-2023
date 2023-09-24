@@ -23,12 +23,11 @@ func state_process(_delta: float) -> void:
 		dash_cooldown_timer.start()
 		player.can_dash = false
 	
-	# feels weird putting this here but
 	if Input.is_action_just_pressed(input_maps.use):
-		# var node: Node2D = ResourceManager.BUMPER_SCENE.instantiate()
-		# node.position = player.position + (1 if player.facing_right else -1) * 100 * Vector2.RIGHT # dumb and bad
-		# player.add_to_level.emit(node)
-		transition_state("place")
+		if player.held_trap_amount > 0:
+			transition_state("place")
+		else:
+			player.use.emit(player)
 	
 func state_process_physics(delta: float) -> void:
 	player.velocity.x = hori_input * stats.move_speed
