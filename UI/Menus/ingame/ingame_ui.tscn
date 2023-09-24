@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7plv0c4le36y"]
+[gd_scene load_steps=9 format=3 uid="uid://c7plv0c4le36y"]
 
 [ext_resource type="PackedScene" uid="uid://d1vbhvwcxfn3x" path="res://UI/Menus/ingame/items_counter_left.tscn" id="1_32tfp"]
 [ext_resource type="Script" path="res://UI/Menus/ingame/ingame_ui.gd" id="1_ae14w"]
@@ -10,33 +10,13 @@
 [sub_resource type="LabelSettings" id="LabelSettings_hwrps"]
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_56sqg"]
+font_size = 32
+font_color = Color(1, 0, 0, 1)
+
 [node name="Ingame UI" type="CanvasLayer"]
 script = ExtResource("1_ae14w")
 trap_icons = Array[Texture2D]([ExtResource("2_h8fl5"), ExtResource("3_t4p5r"), ExtResource("4_vmlij")])
-
-[node name="Control" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Panel" parent="Control/MarginContainer" instance=ExtResource("1_32tfp")]
-layout_mode = 2
 
 [node name="Dbg coincounter" type="Control" parent="."]
 layout_mode = 3
@@ -58,24 +38,6 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="P1 Label" type="Label" parent="Dbg coincounter/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "0
-"
-label_settings = SubResource("LabelSettings_hwrps")
-
-[node name="P2 Label" type="Label" parent="Dbg coincounter/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "0
-"
-label_settings = SubResource("LabelSettings_hwrps")
-
 [node name="ItemCounterLeft" parent="Dbg coincounter/MarginContainer" instance=ExtResource("1_32tfp")]
 unique_name_in_owner = true
 layout_mode = 2
@@ -87,3 +49,47 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+fade_color = Color(0, 0, 0, 1)
+left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dbg coincounter/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="P1 Label" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0
+"
+label_settings = SubResource("LabelSettings_hwrps")
+
+[node name="P1 Deaths" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_56sqg")
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Dbg coincounter/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="P2 Label" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "0
+"
+label_settings = SubResource("LabelSettings_hwrps")
+
+[node name="P2 Deaths" type="Label" parent="Dbg coincounter/MarginContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_56sqg")
+horizontal_alignment = 1

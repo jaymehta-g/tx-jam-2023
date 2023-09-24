@@ -37,13 +37,18 @@ var held_trap_amount: int = 0:
 		held_trap_amount = value
 		SignalBus.trap_amount_changed.emit(self, held_trap_amount)
 
-
 var coin_count: int:
 	get:
 		return coin_count
 	set(value):
 		coin_count = value
 		SignalBus.coin_counter_change.emit(self, coin_count)
+
+var death_count: int:
+	get: return death_count
+	set(value): 
+		death_count = value
+		SignalBus.death_count_changed.emit(self, death_count)
 
 enum Type {P1, P2}
 
@@ -54,6 +59,8 @@ func _ready() -> void:
 	if $Sprite2D:
 		$Sprite2D.modulate = dbg_color
 	coin_count = coin_count # to update the counters
+	if Globals.players.find(self) == -1:
+		Globals.players.append(self)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed(input_maps.left):
@@ -63,15 +70,20 @@ func _process(_delta: float) -> void:
 	if $Sprite2D:
 		$Sprite2D.scale.x = abs($Sprite2D.scale.x) * facing_right_multiplier
 	# debugging crap
-	if position.y > 2000:
-		velocity = Vector2.ZERO
-		if respawn_location: position= respawn_location.position
-		else: position = Vector2.ZERO
-		$"State Machine".go_to_state("move")
+	if position.y > 700:
+		die()
+
 
 func bounce(dir: Vector2, strength: float) -> void: # needs to be here bc
 	velocity = dir.normalized() * strength			# this behavior happens regardless of state
 	$"State Machine".go_to_state("bounce")			# kinda ugly but wtv
+
+func die() -> void:
+	death_count += 1
+	velocity = Vector2.ZERO
+	if respawn_location: position= respawn_location.position
+	else: position = Vector2.ZERO
+	$"State Machine".go_to_state("move")
 
 func play_pipe() -> void:
 	var funny: AudioStreamPlayer = AudioStreamPlayer.new()
@@ -89,3 +101,7 @@ func play_bounce() -> void:
 	funny.volume_db = -10
 	funny.play(0)
 	funny.finished.connect(func(): funny.queue_free())
+
+
+func _on_hurtbox_body_entered(body:Node2D) -> void:
+	die()

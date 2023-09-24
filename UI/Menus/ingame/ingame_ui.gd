@@ -8,6 +8,9 @@ extends CanvasLayer
 @onready var p1_traps = %"ItemCounterLeft"
 @onready var p2_traps = %"ItemCounterRight"
 
+@onready var p1_deaths = %"P1 Deaths"
+@onready var p2_deaths = %"P2 Deaths"
+
 func _ready() -> void:
 	SignalBus.coin_counter_change.connect(func(player: Player, amount: int):
 		var label := p1_label if player.type == Player.Type.P1 else p2_label
@@ -22,6 +25,11 @@ func _ready() -> void:
 	SignalBus.trap_amount_changed.connect(func(player: Player, amnt: int):
 		var icons = p1_traps if player.type == Player.Type.P1 else p2_traps	
 		icons.set_num_icons(amnt)
+	)
+
+	SignalBus.death_count_changed.connect(func(player: Player, amount: int):
+		var label: Label = p1_deaths if player.type == Player.Type.P1 else p2_deaths
+		label.text = str(amount)
 	)
 	p1_traps.set_num_icons(0)
 	p2_traps.set_num_icons(0)

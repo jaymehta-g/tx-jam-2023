@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ResourceManager="*res://misc/resource_manager.gd"
 SignalBus="*res://misc/signal_bus.gd"
+Globals="*res://misc/globals.gd"
 
 [debug]
 
@@ -92,7 +93,9 @@ p2_use={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Level"
+2d_physics/layer_3="Harmful"
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
