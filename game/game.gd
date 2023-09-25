@@ -13,7 +13,7 @@ func _ready():
 		music.finished.connect(func(): music.playing = true)
 	Globals.timer = Timer.new()
 	add_child(Globals.timer)
-	Globals.timer.wait_time = 1
+	Globals.timer.wait_time = 150
 	Globals.timer.one_shot = true
 	Globals.timer.start()
 	Globals.timer.timeout.connect(func(): get_tree().change_scene_to_packed(ResourceManager.ENDING_SCENE))
