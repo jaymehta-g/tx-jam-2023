@@ -86,7 +86,7 @@ func die() -> void:
 	if type == Type.P1:
 		Globals.player_1_deaths += 1
 	else:
-		Globals.player_1_deaths += 2
+		Globals.player_2_deaths += 1
 	velocity = Vector2.ZERO
 	if respawn_location: position= respawn_location.position
 	else: position = Vector2.ZERO
