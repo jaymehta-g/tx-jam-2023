@@ -2,6 +2,8 @@ extends Node
 
 @onready var background: TextureRect = $"CanvasLayer/TextureRect"
 
+var pets: int = 0
+
 func _ready():
 	if Globals.player_1_deaths == Globals.player_2_deaths:
 #	if true:
@@ -18,6 +20,22 @@ func _ready():
 	$"AudioStreamPlayer".finished.connect(func(): $"AudioStreamPlayer".playing = true)
 
 func _on_button_pressed():
-	$"CanvasLayer/MarginContainer2/TextureRect2".visible = true
+	pets += 1
 	
-	print_debug("THE DOG HAS BEEN PET")
+	if pets == 1:
+		$"CanvasLayer/Bruce".visible = true
+		$"CanvasLayer/Program2".visible = true
+	elif pets == 2:
+		$"CanvasLayer/Jay".visible = true
+		$"CanvasLayer/Program".visible = true
+	elif pets == 3:
+		$"CanvasLayer/Rach".visible = true
+		$"CanvasLayer/Art".visible = true
+	elif pets == 4:
+		$"CanvasLayer/Karah".visible = true
+		$"CanvasLayer/Music".visible = true
+	elif pets == 5:
+		$"CanvasLayer/Rhea".visible = true
+		$"CanvasLayer/Design".visible = true
+	elif pets == 6:
+		$"CanvasLayer/MarginContainer2/TextureRect2".visible = true

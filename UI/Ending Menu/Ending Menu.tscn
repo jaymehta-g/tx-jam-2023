@@ -1,9 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://da4vb86fhk376"]
+[gd_scene load_steps=14 format=3 uid="uid://da4vb86fhk376"]
 
 [ext_resource type="Script" path="res://UI/Ending Menu/Ending Menu.gd" id="1_08x0i"]
 [ext_resource type="Texture2D" uid="uid://6jvs04cnghsy" path="res://UI/Ending Menu/player_1_win.png" id="1_l7s1x"]
 [ext_resource type="Texture2D" uid="uid://cu40jhqu0qcxq" path="res://UI/Ending Menu/biscuit.png" id="3_m4v7p"]
 [ext_resource type="AudioStream" uid="uid://cn2h34wykvc5f" path="res://Audio/Music/A_Little_Bit_of_Happiness-1.wav" id="3_pxh16"]
+[ext_resource type="Texture2D" uid="uid://dlyad343w5ko1" path="res://UI/Ending Menu/Bruce.png" id="4_d133l"]
+[ext_resource type="Texture2D" uid="uid://23uh7lhrgkss" path="res://UI/Ending Menu/Jay.png" id="5_5oxr6"]
+[ext_resource type="Texture2D" uid="uid://di34jrbglo1i0" path="res://UI/Ending Menu/Karah.png" id="6_ci1vd"]
+[ext_resource type="Texture2D" uid="uid://bj576yi7uj5ej" path="res://UI/Ending Menu/Rach.png" id="7_45xcj"]
+[ext_resource type="Texture2D" uid="uid://b58oq1rh5scvg" path="res://UI/Ending Menu/Rhea.png" id="8_cvh2b"]
+[ext_resource type="Texture2D" uid="uid://cqkip146si24e" path="res://UI/Ending Menu/music.png" id="9_slpyn"]
+[ext_resource type="Texture2D" uid="uid://bv0chgcmqsgvp" path="res://UI/Ending Menu/program.png" id="10_t38k2"]
+[ext_resource type="Texture2D" uid="uid://cbmf7lv2so311" path="res://UI/Ending Menu/design.png" id="11_2qi4d"]
+[ext_resource type="Texture2D" uid="uid://d3ob6w3qbli7i" path="res://UI/Ending Menu/art.png" id="12_4gapi"]
 
 [node name="ending_menu" type="Node2D"]
 script = ExtResource("1_08x0i")
@@ -52,6 +61,67 @@ theme_override_constants/margin_bottom = 150
 [node name="Button" type="Button" parent="CanvasLayer/MarginContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+
+[node name="Bruce" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+z_index = 1
+position = Vector2(104, 113)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_d133l")
+
+[node name="Jay" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(280, 101)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5oxr6")
+
+[node name="Karah" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(50, 268)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_ci1vd")
+
+[node name="Rach" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(189, 199)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_45xcj")
+
+[node name="Rhea" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(54, 431)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_cvh2b")
+
+[node name="Music" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(97, 309)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_slpyn")
+
+[node name="Program" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(226, 73)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_t38k2")
+
+[node name="Program2" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(54, 102)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_t38k2")
+
+[node name="Design" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(113, 458)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_2qi4d")
+
+[node name="Art" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(135, 222)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_4gapi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_pxh16")
