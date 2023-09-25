@@ -83,7 +83,7 @@ func _on_texture_button_pressed():
 	$"Initial Wait".start()
 	music.finished.disconnect(replay.bind(music))
 	music.playing = false
-	pass # Replace with function body.
+	%"TXJamLabel".queue_free()
 
 
 func _on_initial_wait_timeout():
