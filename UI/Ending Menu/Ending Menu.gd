@@ -18,5 +18,6 @@ func _ready():
 	$"AudioStreamPlayer".finished.connect(func(): $"AudioStreamPlayer".playing = true)
 
 func _on_button_pressed():
+	$"CanvasLayer/MarginContainer2/TextureRect2".visible = true
 	
 	print_debug("THE DOG HAS BEEN PET")
